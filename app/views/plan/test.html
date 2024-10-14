@@ -1,0 +1,147 @@
+{% extends "layout_data.html" %}
+
+{% block page_title %}
+  Accessibility - DWP Digital User Centred Design Manual
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Delivering Digitally Roadmap</h1>
+
+<div id="form-filter">
+<form class="form">
+  <div class="govuk-form-group data-filter">
+    <!-- <p>Show products with</p> -->
+
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      </legend>
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="datafilter-general-high" name="general" type="checkbox" value="carcasses" checked="checked">
+          <label class="govuk-label govuk-checkboxes__label" for="datafilter-general-high">
+            High value
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="datafilter-general-med" name="general" type="checkbox" value="mines" checked="checked">
+          <label class="govuk-label govuk-checkboxes__label" for="datafilter-general-med">
+            Medium value
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="datafilter-general-low" name="general" type="checkbox" value="farm" checked="checked">
+          <label class="govuk-label govuk-checkboxes__label" for="datafilter-general-low"> 
+            Low value
+          </label>
+        </div>
+      </div>
+  
+    </fieldset>
+  </div>
+
+</form>
+</div>
+
+  
+  <!-- <div class="govuk-form-group data-filter">
+    <p>Reduction in fraud and error (FE) rating</p>
+
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      </legend>
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="fraud-high" name="fraud" type="checkbox" value="carcasses" checked="checked">
+          <label class="govuk-label govuk-checkboxes__label" for="fraud-high">
+            High
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="fraud-med" name="fraud" type="checkbox" value="mines" checked="checked">
+          <label class="govuk-label govuk-checkboxes__label" for="fraud-med">
+            Medium
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="fraud-low" name="fraud" type="checkbox" value="farm" checked="checked">
+          <label class="govuk-label govuk-checkboxes__label" for="fraud-low"> 
+            Low
+          </label>
+        </div>
+      </div>
+  
+    </fieldset>
+  </div>
+  
+    <div class="govuk-form-group data-filter">
+      <p>Operational efficiency (FTE) rating</p>
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        </legend>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="fte-high" name="fte" type="checkbox" value="carcasses" checked="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="fte-high">
+              High
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="fte-med" name="fte" type="checkbox" value="mines" checked="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="fte-med">
+              Medium
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="fte-low" name="fte" type="checkbox" value="farm" checked="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="fte-low">
+              Low
+            </label>
+          </div>
+        </div>
+    
+      </fieldset>
+    </div>
+  
+    <div class="govuk-form-group data-filter">
+      <p>Citizen Outcome rating</p>
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        </legend>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="citizen" type="checkbox" value="carcasses" checked="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+              High
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-2" name="citizen" type="checkbox" value="mines" checked="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+              Medium
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste-3" name="citizen" type="checkbox" value="farm" checked="checked">
+            <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              Low
+            </label>
+          </div>
+        </div>
+    
+      </fieldset>
+    </div> -->
+
+
+
+  {% include "./templates/timeline.html" %}
+
+  {% include "./templates/dependencies.html" %}
+
+  {% for servicename in data.servicelist %}
+  {% include "./templates/service-template.html" %}
+  {% endfor %}
+
+</div>
+
+{% endblock %}

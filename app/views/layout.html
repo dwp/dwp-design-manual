@@ -1,5 +1,5 @@
 {#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
-{%- set assetPath = '/plugin-assets/govuk-frontend/dist/govuk/assets' -%}
+{%- set assetPath = '/govuk/assets' -%}
 
 {% extends "govuk/template.njk" %}
 
@@ -28,14 +28,9 @@
 {% from "govuk/components/tag/macro.njk"              import govukTag %}
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-{% from "govuk/components/header/macro.njk" import govukHeader %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block head %}
-  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
-  
-  {# For guidance, see: https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images #}
+  {% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
@@ -59,21 +54,18 @@
   {% block footer %}
     {{ govukFooter({
       meta: {
-        items: []
+        items: [
+
+        ]
       }
     }) }}
   {% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {# Move JavaScript to end of body and ensure correct order #}
-  <script src="/public/javascripts/application.js"></script>
-  <script>
-    window.addEventListener('load', function() {
-      if (window.GOVUKFrontend) {
-        window.GOVUKFrontend.initAll();
-      }
-    });
-  </script>
+  {% block scripts %}
+    {% include "includes/scripts.html" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

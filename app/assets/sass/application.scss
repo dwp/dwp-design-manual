@@ -4,8 +4,8 @@ $govuk-global-styles: true;
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
 
-// Import GOV.UK Frontend
-@import "../../../node_modules/govuk-frontend/dist/govuk/all";
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+
 
 // Patterns that aren't in Frontend
 @import "patterns/related-items";
@@ -14,47 +14,6 @@ $govuk-assets-path: '/govuk/assets/';
 // Variables
 $site-width:  1080px;
 $dwp-primary-color: govuk-colour("turquoise");
-$nav-background-color: 	#634169;
-
-// Service navigation styles
-.dwp-service-nav {
-  background-color: $nav-background-color;
-  padding: govuk-spacing(2) 0;
-  margin-bottom: govuk-spacing(8);
-
-}
-
-.dwp-service-nav__list {
-  list-style: none;
-  margin: 0;
-  padding: 0px;
-
-}
-
-.dwp-service-nav__item {
-  display: inline-block;
-  margin-right: govuk-spacing(4);
-  margin-bottom: 0;
-}
-
-.dwp-service-nav__link,
-.dwp-service-nav__link:link,
-.dwp-service-nav__link:visited {
-  @include govuk-font($size: 19);
-  color: govuk-colour("white") !important;
-  text-decoration: none;
-}
-
-.dwp-service-nav__link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  color: govuk-colour("white") !important;
-}
-
-.dwp-service-nav__link:focus {
-  @include govuk-focused-text;
-  color: $govuk-text-colour !important;
-}
 
 // Components that aren't in Frontend
 @import "components/big-bar";
@@ -62,7 +21,7 @@ $nav-background-color: 	#634169;
 @import "components/dwp-header";
 @import "components/flex-layout";
 @import "components/page-nav";
-.govuk-width-container { @include govuk-width-container; }
+
 
 // Utility classes
 .no-margin { padding-bottom: 0; margin-bottom: 0;}
@@ -350,17 +309,6 @@ code {
   margin-top: 0;
 }
 
-
-.index {
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 10px 15px;
-  margin-bottom: 50px;
-  margin-top: 0;
-}
 .snippet--terminal {
   background-color: #111;
   color: #FFF;
@@ -422,7 +370,6 @@ code {
   background-color: $color_dfe-white;
   border: 1px solid $color_dfe-grey-2;
   max-width: 400px;
-  
 
 }
 
@@ -458,7 +405,7 @@ code {
 
 .dfe-card:hover,
 .dfe-card:focus-within {
-  background-color: 	#634169;
+  background-color: $color_dfe-blue;
 }
 
 .dfe-card:hover a,
@@ -484,20 +431,9 @@ code {
   z-index: 2;
 }
 
-.dfe-card-link--header--no-visited-state:link {
- color: black;
-
-  
-}
-.dfe-card-link--header--visited-state:link {
-  color: #141ed4;
- 
-   
- }
 .dfe-card-link--header {
-  text-decoration-style: black;
-
-  
+  text-decoration: none;
+  color: #28a197;
 }
 
 .dfe-card-link--header:after {
@@ -507,192 +443,4 @@ code {
   top: 0;
   right: 0;
   bottom: 0;
-}
-
-.app-masthead {
-  padding-top: 0px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #634169;
-  color: #fff;
-  background-color:#634169;
-  width:100%
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead {
-      padding-top:0px
-  }
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead {
-      padding-bottom:30px
-  }
-}
-
-.app-masthead__title {
-  color: #fff;
-  margin-bottom: 20px
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead__title {
-      margin-bottom:30px
-  }
-}
-
-.app-masthead__description {
-  font-family: "GDS Transport",arial,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.1904761905;
-  margin-bottom: 0
-}
-
-@media print {
-  .app-masthead__description {
-      font-family: sans-serif
-  }
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead__description {
-      font-size:1.5rem;
-      line-height: 1.25
-  }
-}
-
-@media print {
-  .app-masthead__description {
-      font-size: 18pt;
-      line-height: 1.15
-  }
-}
-
-.app-masthead__image {
-  display: none
-}
-
-@media(min-width: 48.0625em) {
-  .app-masthead__image {
-      display:block;
-      width: 100%;
-      margin-top: 15px
-  }
-} 
-
-.app-masthead-clear {
-  padding-top: 0px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid hsl(0, 17%, 95%);
-  color: #000000;
-  background-color:#FFFFFF;
-  width:100%
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead-clear {
-      padding-top:0px
-  }
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead-clear {
-      padding-bottom:30px
-  }
-}
-
-.app-masthead-clear__title {
-  color: #fff;
-  margin-bottom: 20px
-}
-
-@media(min-width: 40.0625em) {
-  .app-masthead-clear__title {
-      margin-bottom:30px
-  }
-}
-
-.app-masthead-clear__description {
-  font-family: "GDS Transport",arial,sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 1.3125rem;
-  line-height: 1.1904761905;
-  margin-bottom: 0
-}
-
-
-.govuk-button--start {
-color:#634169
-
-}
-
-.govuk-button--inverse {
-  color:#634169
-}
-.govuk-button--inverse:visited {
-  color:#634169
-
-}
-.govuk-link--no-visited-state:link {
-  color:black
-}
-.govuk-link--no-visited-state:visited {
-  color:black
-}
-.dfe-action-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.dfe-action-list li a {
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 15px 20px;
-  background-color: #b28db8;
-  margin-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-decoration: none;
-  color: #634169;
-}
-
-.dfe-action-list li a:hover, .dfe-action-list li a:focus {
-  background-color: #634169;
-  color: #ffffff;
-  box-shadow: none;
-}
-
-/* Chevron Icon */
-.chevron {
-  width: 24px;
-  height: 24px;
-  fill: #634169;
-  flex-shrink: 0;
-  margin-left: 10px;
-}
-
-.dfe-action-list li a:hover .chevron,
-.dfe-action-list li a:focus .chevron {
-  fill: #ffffff;
-  ;
-}
-
-.govuk-footer {
-  font-family: "GDS Transport", arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.1428571429;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  border-top: 10px solid #634169;
-  color: #0b0c0c;
-  background: #f3f2f1;
 }

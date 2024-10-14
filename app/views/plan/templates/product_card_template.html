@@ -1,0 +1,69 @@
+<!-- {% if item.deliverytheme == "Reducing Fraud and Error" %}
+<div class="planproductcard theme-fraud">
+{% elif item.deliverytheme == "Automating Processes" %}
+<div class="planproductcard theme-process">
+{% elif item.deliverytheme == "Customer Understanding" %}
+<div class="planproductcard theme-understanding">
+{% elif item.deliverytheme == "Channels" %}
+<div class="planproductcard theme-channels">
+{% elif item.deliverytheme == "Holistic Customer View" %}
+<div class="planproductcard theme-holistic">
+{% else %}
+<div class="planproductcard">
+{% endif %} -->
+
+<div class="planproductcard">
+<div>   
+    <p class="govuk-body-l">{{item.sub}}</p>
+    <p>{{item.Product}}</p>
+</div>
+
+<div class="plan_value">
+    <ul class="govuk-list">
+        {% if item.fraudrating == "LOW" %}
+        <li>FED: Low</li>
+        {% elif item.fraudrating == "MEDIUM" %}
+        <li>FED: Medium</li>
+        {% elif item.fraudrating == "HIGH" %}
+        <li>FED: <span class="bold">High</span></li>
+        {% endif %}
+
+        {% if item.fterating == "LOW" %}
+        <li>FTE: Low</li>
+        {% elif item.fterating == "MEDIUM" %}
+        <li>FTE: Medium</li>
+        {% elif item.fterating == "HIGH" %}
+        <li>FTE: <span class="bold">High</span></li>
+        {% endif %}
+    </ul>
+
+    <ul class="govuk-list">
+        {% if item.citizenrating == "LOW" %}
+        <li>Citizen: Low</li>
+        {% elif item.citizenrating == "MEDIUM" %}
+        <li>Citizen: Medium</li>
+        {% elif item.citizenrating == "HIGH" %}
+        <li>Citizen: <span class="bold">High</span></li>
+        {% endif %}
+
+    </ul>
+</div>
+
+<div class="data-component-container"> 
+    <ul class="govuk-list">
+        {% if item.dependency1 == "DWP External Identity" or item.dependency2 == "DWP External Identity" or item.dependency3 == "DWP External Identity" or item.dependency4 == "DWP External Identity" %}
+        <li>External Identity</li>
+        {% endif %}
+        {% if item.dependency1 == "DWP Notifications" or item.dependency2 == "DWP Notifications" or item.dependency3 == "DWP Notifications" or item.dependency4 == "DWP Notifications" %}
+        <li>Notifications</li>
+        {% endif %}
+        {% if item.dependency1 == "DWP Citizen Income" or item.dependency2 == "DWP Citizen Income" or item.dependency3 == "DWP Citizen Income" or item.dependency4 == "DWP Citizen Income" %}
+        <li>Citizen income</li>
+        {% endif %}
+        {% if item.dependency1 == "DWP Safeguarding" or item.dependency2 == "DWP Safeguarding" or item.dependency3 == "DWP Safeguarding" or item.dependency4 == "DWP Safeguarding" %}
+        <li>Safeguarding</li>
+        {% endif %}
+    </ul>
+</div>
+
+</div>

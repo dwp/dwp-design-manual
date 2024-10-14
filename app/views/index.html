@@ -1,113 +1,75 @@
 {% extends "dwp-layout-big-bar.html" %}
-{% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
+{% block hero_content %}
+  <h1 class="govuk-heading-xl no-margin">Design services at the Department for Work and Pensions (DWP).</h1>
+  <p class="big-bar__description">We follow the <a href="https://www.gov.uk/guidance/government-design-principles">Government Design Principles</a> to deliver consistent, usable services that put people first.</p>
 
-{% block page_title %}
- DWP Digital User Centred Design Manual
+  <p class="big-bar__description">
+    <!-- <a href="principles">See our user centred design principles</a> -->
+  </p>
+
 {% endblock %}
-  {% block content %}
-   <main id="content" role="main">
-   
-    <section style="background-color:#ffffff;" class="govuk-!-margin-top-0 govuk-!-margin-bottom-9">
-        <div class="govuk-width-container">
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                                            <h2 class="govuk-heading-xl govuk-!-margin-bottom-3">Get started</h2>
-                          <p class="govuk-body-l"> Use this design manual to find out how we design accessible user centred services and products at DWP.</p>
 
-                </div>
-                <div class="govuk-grid-column-one-half">
-                    <ul class="govuk-list dfe-action-list">
-                        <li>
-                            <a href="/home/intro-to-ucd/intro-start" class="govuk-link govuk-link--no-visited-state">
-                           Understanding UCD
-                            <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/practitioners/ucd-roles.html" class="govuk-link govuk-link--no-visited-state">
-                               Working as a UCD Professional
-                            <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/standards/standards.html" class="govuk-link govuk-link--no-visited-state">
-                            Standards and Principles
-                            <svg class="chevron dfe-icon dfe-icon__chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                    <path d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+{% block content %}
 
+ <main id="content" role="main">
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-xl" >Resources</h2>
-        {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}  {{ card({
-            cards: [
-          
-               
-            
-              {
-                "imageCard": false,
-                "imagePath": "/images/sample-image.jpg",
-                "altText": "Sample Image",
-                "headingLevel": "3",
-                "linkCard": true,
-                "link": "https://accessibility-manual.dwp.gov.uk",
-                "openInNewTab": false,
-                "heading": "The DWP Accessibility Manual",
-                "description": "Guidance and best practice for building accessible services."
-              },
-              {
-                "imageCard": false,
-                "imagePath": "/images/sample-image.jpg",
-                "altText": "Sample Image",
-                "headingLevel": "3",
-                "linkCard": true,
-                "link": "https://design-system.dwp.gov.uk/index",
-                "openInNewTab": false,
-                "heading": "The DWP Design System",
-                "description": "Use this design system to make your service consistent with DWP."
-              },
-              {
-                "imageCard": false,
-                "imagePath": "/images/sample-image.jpg",
-                "altText": "Sample Image",
-                "headingLevel": "3",
-                "linkCard": true,
-                "link": "standards/agent-facing-systems",
-                "openInNewTab": false,
-                "heading": "Designing for Agent facing systems in DWP",
-                "description": "Design principles for designing internal facing systems in DWP."
-              }
-              ]
-            }) }}
-      </div>
-      </div>
-                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-  
-             <div class="govuk-width-container big-bar__wrapper">
-       <h1 class="govuk-heading-xl">Community</h1>
-       <p class="govuk-body-l">The DWP UCD Manual is community led, to keep it updated and relevant we encourage
-         contributions from the community.</p>
-       <p class="govuk-body-l">You can provide feedback, suggest improvements and get involved in conversations
-         by <a href="https://github.com/dwp/dwp-ucd-manual/discussions" class=govuk-link>getting involved in the GitHub discussions</a>.</p>
-      
-          </div>   
+  <div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="heading-medium">
+      <a href="interaction-design/">Interaction and Service Design</a>
+    </h2>
+    <p class="govuk-body">How we design end-to-end services, user journeys and individual interactions.</p>
   </div>
-</main>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="heading-medium">
+    <a href="content-design/">Content Design</a>
+    </h2>
+    <p class="govuk-body">How we design content for our products and services.</p>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="heading-medium">
+      <a href="resources">Resources</a>
+    </h2>
+    <p class="govuk-body">Templates, blogs, and other useful information and resources.</p>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="heading-small">
+      <a href="https://design-system.dwp.gov.uk/index">The DWP Design System</a>
+    </h2>
+    <p class="govuk-body">Use this design system to make your service consistent with DWP.</p>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="heading-medium">
+    <a href="https://accessibility-manual.dwp.gov.uk">The DWP Accessibility Manual</a>
+    </h2>
+    <p class="govuk-body">Guidance and best practice for building accessible services.</p>
+  </div>
+
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+  <p class="govuk-body">
+    The content in this manual follows and supports the <a href="https://www.gov.uk/service-manual">GDS service manual</a>.
+  </p>
+
+</div>
+</div>
+
+
+
+ </main>
+
 {% endblock %}
-
-
-

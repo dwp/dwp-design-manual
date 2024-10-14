@@ -1,0 +1,119 @@
+{% for item in data.planData %}
+{% if item.Service == data.servicelist[service] %}
+  <p>{{item.Service}}</p>
+  {% endif %}
+{% endfor %}
+
+
+
+
+<div id="plan_container">
+</div>
+<!-- now -->
+
+<!-- <div class="plan_timeframe">
+  <div class="servicerow"> 
+  {% for item in data.planData %}
+    {% if item.time == "Now" %}
+    <div class="card_container">
+      {% if item.deliverytheme == "Customer Understanding" %}
+      <div class="plancard theme_cu">
+      {% else %}
+      <div class="plancard theme_cu">
+      {% endif %}
+        <div>
+          <p class="govuk-body-l">{{item.sub}}</p>
+          <p>{{item.product}}</p>
+        </div>
+
+        <div class="plan_value">
+          <ul class="govuk-list">
+            <li>FED: Low</li>
+            <li>FTE: Low</li>
+          </ul>
+          <ul class="govuk-list">
+            <li>Citizen: Low</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    {% endif %}
+  {% endfor %} -->
+
+  </div>
+
+</div>
+
+
+</div><!-- end of plan container -->
+
+</div><!-- end of support for families -->
+</div>
+
+
+
+
+<!-- next -->
+
+      <!-- <p>description {{item.description}}</p> -->
+
+      <!-- <p>strategictheme {{item.strategictheme}}</p>
+      <p>value {{item.value}}</p>-->
+
+      <!-- <p>notes {{item.notes}}</p> -->
+
+
+
+<!-- <p>zone {{item.zone}}</p>
+<p>service {{item.service}}</p>
+<p>product {{item.product}}</p>
+<p>sub {{item.sub}}</p>
+<p>description {{item.description}}</p>
+<p>time {{item.time}}</p>
+<p>strategictheme {{item.strategictheme}}</p>
+<p>deliverytheme {{item.deliverytheme}}</p>	
+<p>value {{item.value}}</p>						
+<p>notes {{item.notes}}</p> -->
+
+
+
+
+
+// [
+//     {
+//     "zone" : "Blue",
+//     "service" : "Support for families",
+//     "product" : "Invited citizens are able to check balance, make and amend payments.",
+//     "sub" : "Citizen facing private beta",
+//     "description" : "Discovery to establish what users need to enable them to decide the best type of maintenance arrangement for them and start application journey whilst meeting policy intent and regulatory requirements and users are able to check if they are likely to be eligible for Child Maintenance prior to submitting an application",	
+//     "time" : "Now",
+//     "strategictheme" : "Improving Citizen Experience",	
+//     "deliverytheme" : "Customer Understanding",			
+//     "value" : "Understand behaviours and needs of citizen to enable new journey design",								
+//     "notes" : "Product is currently in Discovery but expectation is that a number of data items will be required and these will persist through to application journey."			
+//     },
+//     {
+//     "zone" : "Blue",
+//     "service" : "Support for families",
+//     "product" : "Invited citizens are able to check balance, make and amend payments.",
+//     "sub" : "Citizen facing private beta",
+//     "description" : "Discovery to establish what users need to enable them to decide the best type of maintenance arrangement for them and start application journey whilst meeting policy intent and regulatory requirements and users are able to check if they are likely to be eligible for Child Maintenance prior to submitting an application",	
+//     "time" : "Now",
+//     "strategictheme" : "Improving Citizen Experience",	
+//     "deliverytheme" : "Customer Understanding",			
+//     "value" : "Understand behaviours and needs of citizen to enable new journey design",								
+//     "notes" : "Product is currently in Discovery but expectation is that a number of data items will be required and these will persist through to application journey."			
+//     }, 
+//     {
+//     "zone" : "Blue",
+//     "service" : "Support for families",
+//     "product" : "Invited citizens are able to check balance, make and amend payments.",
+//     "sub" : "Citizen facing private beta",
+//     "description" : "Discovery to establish what users need to enable them to decide the best type of maintenance arrangement for them and start application journey whilst meeting policy intent and regulatory requirements and users are able to check if they are likely to be eligible for Child Maintenance prior to submitting an application",	
+//     "time" : "Next",
+//     "strategictheme" : "Improving Citizen Experience",	
+//     "deliverytheme" : "Customer Understanding",			
+//     "value" : "Understand behaviours and needs of citizen to enable new journey design",								
+//     "notes" : "Product is currently in Discovery but expectation is that a number of data items will be required and these will persist through to application journey."			
+//     }   
+// ]
