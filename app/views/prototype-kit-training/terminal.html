@@ -1,0 +1,228 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+Terminal
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        Terminal
+      </h1>
+    </div>
+  </div>
+
+  <div class="flex-layout flex-layout--rev">
+    <div class="flex-layout__sidebar">
+
+      <aside class="app-related-items" role="complementary" style="float-right">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contents
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#about">
+                What is Terminal?
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#opening">
+                Opening Terminal
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#navigating">
+                Navigating your computer using Terminal
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#listing">
+                Listing contents of a directory using Terminal
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#commands">
+                Running commands in Terminal
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#tips">
+                Tips
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#resources">
+                More resources
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+    <div class="flex-layout__main">
+      <h2 class="govuk-heading-m" id="about">What is Terminal?</h2>
+      <p>Terminal is the application on your Mac that lets you use the command line: a text interface for your computer. You can use it to navigate through files and do things, but it is completely text based.</p>
+
+      <p>You need to use Terminal to install, start and stop the Prototype Kit - so knowing a few basics is helpful.</p>
+      
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          The command line is a powerful tool, but can potentially harm your computer if used in the wrong way. For example, it can be used to change permissions on crucial files and folders, or delete lots of files. If you are unsure about something, please try and find a developer to help you out.
+        </strong>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="opening">Opening Terminal</h2>
+      <p>You don't need to install this application. You can open Terminal by going to <code>Applications</code> and then <code>Utilities</code> on your Mac. You can also open it by opening Spotlight Search (cmd + space bar) and typing 'terminal'.</p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="navigating">Navigating your computer using Terminal</h2>
+      <p>In the command line, the term 'directory' just means 'folder' - they are one and the same. The first thing you want get used to is navigating around the directories on your computer using the comand line.</p>
+      
+      <h3 class="govuk-heading-s" id="cd">cd</h3>
+      <p>The <strong>cd</strong> command stands for 'change directory'. </p> 
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s">Navigate into a directory</h3>
+        <p>When you open Terminal, it will automatically place you in your home directory. Type <code>cd Documents</code> and press 'enter'. Terminal will navigate you to your Documents directory. You can navigate into any directory this way.</p>
+        <pre class="snippet snippet--terminal">cd Documents</pre>
+      
+        
+        <h3 class="govuk-heading-s">Navigate up a directory</h3>
+        <p>Typing <code>..</code> will navigate you back up to the parent directory - in this case back to your home directory.</p>
+        <pre class="snippet snippet--terminal">cd ..</pre>
+        
+        <h3 class="govuk-heading-s">Using tab to autopopulate</h3>
+        <p>When navigating between directories, pressing your 'tab' key will make Terminal try to autopopulate a directory name. So if you're in your home directory, typing <code>cd Doc</code> and then 'tab' should autopopulate the directory name with 'Documents'.</p>
+          
+        <p>Note that typing <code>cd Do</code> will return <code>Documents/  Downloads/</code> as there is no unique directory for Terminal to autopopulate.</p>
+
+        <h3 class="govuk-heading-s">Home directory</h3>
+        <p>The <code>cd ~</code> command will navigate directly to your home directory. The symbol is called 'tilde'.</p>
+
+        <h3 class="govuk-heading-s">Navigate directly to a nested directory</h3>
+        <p>You can navigate directly to a directory by typing <code>cd</code> followed by the full path, for example <code>cd Documents/Projects/Some project</code>. You can use tab to autopopulate after every <code>/</code>.</p>
+        <p><strong>Tip:</strong> Drag a folder directly from Finder to Terminal to get it's full path.</p>
+
+        
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="listing">Listing contents of a directory using Terminal</h2>
+      
+      <h3 class="govuk-heading-s" id="ls">ls</h3>
+      <p>The <strong>ls</strong> command stands for 'list' - typing <code>ls</code> and then pressing enter will list the contents of a directory.</p>
+      
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s">List contents of a directory</h3>
+        <p>Type <code>cd ~</code> to navigate to your home directory. Then type <code>ls</code> and enter.</p>
+        <pre class="snippet snippet--terminal">cd ~</pre>
+        <pre class="snippet snippet--terminal">ls</pre>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="commands">Running commands in Terminal</h2>
+      
+      <p>Once you've got used to navigating around directories and listing their contents, you can think about running commands. When using the Prototype Kit, you will be navigating to a prototype's directory and then running the following commands:</p>
+
+      <div class="govuk-inset-text">
+        <pre class="snippet snippet--terminal govuk-!-margin-bottom-2">npm install</pre>
+        <p class="govuk-!-margin-bottom-6"><strong>npm</strong> (originally short for Node Package Manager) is a package manager used by JavaScript applications - it is used to manage dependencies. <code>npm install</code> will automatically install all the files the Prototype Kit needs to run. It does this by looking at the contents of the <code>package.json</code> file, and will install the files in a directory called 'node_modules'.</p>
+      
+        <pre class="snippet snippet--terminal govuk-!-margin-bottom-2">npm start</pre>
+        <p class="govuk-!-margin-bottom-6">This command starts the Prototype Kit application, and runs it on what is called your 'localhost' - a network that runs on your computer on which applications can be accessed.</p>
+        
+        <p class="govuk-!-margin-bottom-2"><code>control + c</code></p>
+        <p class="govuk-!-margin-bottom-6">To stop the Prototype Kit running, press the <code>control</code> and <code>c</code> keys together in the prototype's directory. This can be used to stop any active process running in Terminal.</p>
+      </div>
+
+      <p>You may also need to run Git commands in Terminal to version control any prototypes you work on - see our <a href="git">resources on Git</a> for more information.</p>
+
+      <details class="govuk-details govuk-!-margin-top-8" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Common issues when running prototypes in Terminal
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul class="govuk-list govuk-list--bullet">
+            <li><code>node-sass</code> error on <code>npm install</code> - usually this requires you to upgrade the version of node-sass in the <code>package.json</code>. There is a list of compatibility on the <a href="https://www.npmjs.com/package/node-sass" target="_blank">node-sass site</a>.</li>
+            <li>Unable to get local issuer certificate - you will need to do enter this command in Terminal: <code>export NODE_EXTRA_CA_CERTS=/etc/ssl/certs/zscaler.pem</code></li>
+          </ul>
+    
+          <p>If you need further help, <a href="/help">there are Slack channels</a> available.</p>
+        </div>
+      </details>
+
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="tips">Tips</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>'tab' key: autopopulates directory name when navigating between directories.</li>
+        <li>Drag a folder directly from Finder to Terminal to get it's full path.</li>
+        <li>Use the <code>up</code> and <code>down</code> keys to go through previously used commands.</li>
+        <li><code>control + c</code> command stops a process running (including a prototype), or clears a partially typed command (if you've made a mistake for example). If you're stuck on a command, this will often get you unstuck!</li>
+        <li><code>cmd + k</code> is a keyboard shortcut to clear the current Terminal window (but doesn't stop your prototype from running).</li>
+        <li><code>cd ~</code> command navigates directly to your home directory.</li>
+        <li><code>npm i</code> command is short for <code>npm install</code>.</li>
+        <li><code>command + t</code> is a keyboard shortcut to open a new tab in Terminal - so you can do different things at the same time.</code></li>
+        <li><code>pwd</code> - stands for 'print working directory' and will print out the exact path of the folder you are currently in.</code></li>
+        <li>Some code editors have a built-in Terminal - this can be useful to install, start and stop a prototype in the same window as editing the prototype code. In Visual Studio Code, you can open a Terminal panel by going to <code>Terminal</code> > <code>New Terminal</code>, and you'll be directly in your prototype directory without having to <code>cd</code> into it.</li>
+        <li>If your prototype isn't working properly, look at the relevant Terminal window - it sometimes prints out error messages, which might help you troubleshoot.</li>
+      </ul>
+ 
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="resources">More resources</h2>
+      <p>You may be interested in finding out more about Terminal: you can create and delete files and folders, edit text or run powerful searches for example.</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://govuk-prototype-kit.herokuapp.com/docs/install/requirements.md#terminal" target="_blank">
+            GDS Prototype Kit installation guide - Terminal
+          </a>
+        </li>
+        <li>
+          <a href="https://tutorials.codebar.io/command-line/introduction/tutorial.html" target="_blank">
+            Introduction to the command line - Codebar
+          </a>
+        </li>
+        <li>
+          <a href="https://www.vikingcodeschool.com/web-development-basics/a-command-line-crash-course" target="_blank">
+            A Command Line Crash Course - Viking Code School
+          </a>
+        </li>
+        <li>
+          <a href="https://code.visualstudio.com/docs/editor/integrated-terminal" target="_blank">
+            Integrated Terminal docs - Visual Studio Code
+          </a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="git" class="page-nav__next">Next: <strong>Git</strong></a></div>
+        <div><a href="javascript" class="page-nav__prev">Previous: <strong> JavaScript</strong></a></div>
+      </nav>
+ 
+    </div>
+
+  </div>
+
+{% endblock %}

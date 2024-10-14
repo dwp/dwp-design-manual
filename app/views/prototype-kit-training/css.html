@@ -1,0 +1,58 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+CSS
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        CSS
+      </h1>
+
+      <p>CSS is the language used to style an HTML document. It is useful to know a bit of CSS if you need to change the way components in the GOV.UK Design System look.</p>
+
+      <p>The Prototype Kit uses <a href="https://sass-lang.com/guide" target="_blank">Sass</a>, which adds extra features to CSS. Though it is useful to at least be aware of Sass, the kit will accept standard CSS styles and syntax.</p>
+      
+      <h2 class="govuk-heading-m" id="resources">Resources</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.codecademy.com/learn/learn-css" target="_blank">
+          Codecademy - Learn CSS
+          </a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/css/default.asp" target="_blank">
+            W3Schools - CSS tutorial
+          </a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/sass/sass_intro.asp" target="_blank">
+            W3Schools - Sass introduction
+          </a>
+        </li>
+        <li>
+          <a href="https://govuk-prototype-kit.herokuapp.com/docs/adding-css-javascript-and-images#css" target="_blank">
+            GOV.UK Prototype Kit - Adding styles
+          </a>
+        </li>
+      </ul>
+
+      {% include 'includes/codecademy-or-w3.html' %}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="javascript" class="page-nav__next">Next: <strong>JavaScript</strong></a></div>
+        <div><a href="html" class="page-nav__prev">Previous: <strong> HTML</strong></a></div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

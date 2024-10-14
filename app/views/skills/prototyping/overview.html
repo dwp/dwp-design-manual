@@ -1,0 +1,47 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Prototyping" %}
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    Prototyping is less about the tool you’re using and more about what you need to research in order to validate or invalidate an idea.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    We create a lot of prototypes to test our ideas with users.
+  </p>
+  <p class="govuk-body">
+    Most importantly, prototyping is about learning. You should ask yourself, “What is the quickest way that I can put something together to learn something?”
+  </p>
+  <p class="govuk-body">
+    Sketching, drawing or working on a whiteboard are the quickest way to create a prototype. Using these tools, you can iterate your ideas quickly. Share them with a wide audience and allow others to collaborate. You should be working in the open and encouraging the team to have an input.
+  </p>
+  <p class="govuk-body">
+    We design journeys not screens. You should think about whole user journeys and interactions before building a working prototype.
+  </p>
+  <p class="govuk-body">
+    Designers must be able to use a range of tools to create prototypes. They must be able to choose the right tool for the job. There is a balance between how real the prototype is and how quick it is to create.
+  </p>
+  <p class="govuk-body">
+    We create multiple versions and keep a record of what’s been tested so that knowledge can be retained and passed on.
+  </p>
+  <p class="govuk-body">
+    To design great services, we need to test them with users end-to-end. This sometimes means creating prototypes of the non-digital parts.
+  </p>
+  <p class="govuk-body">
+    We create a lot of working prototypes using the government design service (GDS) prototype kit. Designers should be comfortable learning to code using this kit, HTML and CSS. Knowledge of JavaScript is useful to create prototypes that are more realistic, if the situation calls for it.
+  </p>
+  <p class="govuk-body">
+    You should be careful not to get too invested in these prototypes and remember their purpose. It is a skill to know when to stop.
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

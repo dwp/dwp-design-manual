@@ -1,0 +1,33 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Collaborating with other roles" %}
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    Design is a team sport. Designers collaborate and work in the open as much as possible.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    Getting the team together to work on a problem helps to build a shared understanding, which is key. It leads to more progress, more quickly. To get the best results we must understand the needs and motivations of the members of our team, and wider stakeholders.
+  </p>
+  <p class="govuk-body">
+    There is an important relationship between researchers, designers and content designers. But design decisions should never be a surprise to any member of the delivery team. If we involve everyone in the process right from the beginning it creates opportunities for them to offer their feedback and expertise. That way we never go too far before finding out from any member of the team if there’s a concern, idea or opportunity.
+  </p>
+  <p class="govuk-body">
+    Similarly, wider stakeholders need the opportunity to see designs. The sooner the better. 
+  </p>
+  <p class="govuk-body">
+    We must be good team members. Integrate with the whole delivery team and find a good way of working for everyone. Being agile and using agile practices help us to do that. If something isn't working, we're encouraged to say so and try something else.  </p>
+  </p>
+  <p class="govuk-body">
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

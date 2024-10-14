@@ -1,0 +1,47 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Community collaboration" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>share your work with other designers and the wider digital community</li> 
+    <li>seek out regular feedback from other designers</li>
+    <li>look at how other designers have tackled similar problems</li> 
+    <li>attend local and national community events</li>
+    <li>create opportunities to collaborate with other designers</li>
+    <li>give constructive feedback and take onboard feedback given to you</li>
+    <li>be inquisitive. look for opportunities to learn both internally and externally</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>support the creation and iteration of common patterns in your work</li>
+    <li>take a lead role in the local design community</li>
+    <li>take an active role in the cross-government design community</li>
+    <li>spot opportunities for others to collaborate, based on your understanding of their work</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>create a community environment in the department which is open, supportive and inclusive</li> 
+    <li>encourage everyone to take part in the department’s design community</li>
+    <li>understand the needs of designers. provide opportunities for them to learn and share</li>
+    <li>attend community events across government when possible. bring relevant learning back to teams</li>
+  </ul> 
+{% endblock %}
+
+{% block related_content %} 
+  <ul class="govuk-list govuk-list--spaced">
+    <li><a href="overview">Overview<a/></li>
+    <li><a href="../index">All skills and expectations<a/></li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Strategic design thinking" %}
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Books</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://good.services/">Good Services</a></span>
+      <span>By Lou Downe (2020)</span>
+    </li>
+    <li>
+      <span><a href="https://www.thisisservicedesigndoing.com/">This Is Service Design Doing</a></span>
+      <span>By Marc Stickdorn. Markus Edgar Hormess, Adam Lawrence, Jakob Schneider (2016)</span>
+    </li>
+    <li>
+      <span><a href="https://www.ruinedby.design/">Ruined by Design</a></span>
+      <span>By Mike Monteiro (2019)</span>
+    </li>
+  </ul> 
+
+  {# <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://www.ted.com/playlists/226/before_public_speaking">TED (Technology, Entertainment, and Design)</a></span>
+      <span>Playlist of TED videos on public speaking. Transcribed and captioned.</span>
+    </li>
+  </ul>  #}
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

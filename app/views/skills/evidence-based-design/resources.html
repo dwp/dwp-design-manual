@@ -1,0 +1,34 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Evidence and context-based design" %}
+
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  <h2 class="govuk-heading-m">Books</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span>Lean UX: Designing Great Products with Agile Teams</span>
+      <span>By Jeff Gothelf and Josh Seiden (2013)</span>
+    </li>
+    <li>
+      <span>Interviewing For Research</span>
+      <span>By Andrew Travers (2013)</span>
+    </li>
+    {# <li>
+      <span>'Design for the Real World'</span>
+      <span>By Victor Papanek (1971)</span>
+    </li> #}
+  </ul> 
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

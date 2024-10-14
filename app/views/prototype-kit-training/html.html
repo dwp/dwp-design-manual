@@ -1,0 +1,54 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+HTML
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        HTML<br>
+        <!-- <strong class="govuk-tag govuk-tag--yellow">TODO: video overview + cheatsheet</strong> -->
+      </h1>
+
+      <p>You will need to learn HTML to use the GOV.UK Prototype Kit. It is the standard markup language for all web pages and is easy to learn.</p>
+
+      <p>Understanding HTML good practice will also help with creating accessible prototypes.</p>
+      
+      <h2 class="govuk-heading-m" id="resources">Resources</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.codecademy.com/learn/learn-html/" target="_blank">
+          Codecademy - Learn HTML
+          </a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/html/default.asp" target="_blank">
+            W3Schools - HTML Tutorial
+          </a>
+        </li>
+        <li>
+          <a href="https://accessibility-manual.dwp.gov.uk/guidance-for-your-job-role/interaction-designer" target="_blank">
+            DWP Accessibility Manual - Guidance for Interaction Designers
+          </a>
+        </li>
+      </ul>
+
+      {% include 'includes/codecademy-or-w3.html' %}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="css" class="page-nav__next">Next: <strong>CSS</strong></a></div>
+        <div><a href="help" class="page-nav__prev">Previous: <strong> Getting help and asking questions</strong></a></div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+JavaScript
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        JavaScript
+      </h1>
+
+      <p>JavaScript (JS) powers the dynamic features on most websites. In the Prototype Kit, it can be useful to know a little: for validating forms or changing the way a page behaves depending on a user's actions for example. It is by no means essential however.</p>
+      
+      <h2 class="govuk-heading-m" id="resources">Resources</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">
+          Codecademy  - Introduction, Conditionals and Functions
+          </a>
+        </li>
+        <li>
+          <a href="https://www.w3schools.com/js/default.asp" target="_blank">
+            W3Schools - up to 'JS Comparisons'
+          </a>
+        </li>
+        <li>
+          <a href="https://govuk-prototype-kit.herokuapp.com/docs/adding-css-javascript-and-images#javascript" target="_blank">
+            GOV.UK Prototype Kit - Adding JavaScript
+          </a>
+        </li>
+      </ul>
+
+      {% include 'includes/codecademy-or-w3.html' %}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="terminal" class="page-nav__next">Next: <strong>Terminal</strong></a></div>
+        <div><a href="css" class="page-nav__prev">Previous: <strong> CSS</strong></a></div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

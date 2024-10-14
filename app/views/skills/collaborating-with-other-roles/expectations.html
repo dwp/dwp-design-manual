@@ -1,0 +1,47 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Collaborating with other roles" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>understand the different roles and responsibilities in your team</li>
+    <li>work closely with the other designers and researchers on your team</li>
+    <li>understand content design and research best practice</li>
+    <li>show designs early and regularly</li>
+    <li>aim to ‘Be agile’ rather than just ‘Do agile’, and understand the difference</li>
+    <li>do not be afraid to ask for help and know who to ask</li>
+    <li>know the types of work you should be doing in each phase of a project</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>create opportunities to collaborate with all areas of your team (User centered design, delivery, software development, etc.)</li>
+    <li>understand where the boundaries are between roles and make any crossover an opportunity</li>
+    <li>break down barriers to help the team work more effectively together</li>
+    <li>have confidence to bring a design mindset to the team</li>
+    <li>help teams improve their agile working practices through honest retrospectives</li>
+    <li>help the other roles in your team understand the value of design and what your role involves</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>collaborate at a strategic level with senior stakeholders to get the best possible outcomes for users and DWP</li>
+    <li>encourage good working practices in teams</li>
+    <li>help people to understand each other’s roles</li>
+    <li>act as a mediator and be able to resolve conflict</li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../expectations_menu.njk" %}
+{% endblock %}

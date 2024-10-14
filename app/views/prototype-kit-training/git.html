@@ -1,0 +1,58 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+Git
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        Git
+      </h1>
+
+      <p>Git is the industry standard version control tool. Developers use it to store their code, collaborate and track all changes. You will need to know Git basics to access prototypes others have set up, save any changes you make to the code and deploy them.</p>
+
+      <p>Git needs to be installed on your Mac - <a href="getting-set-up#git">read more about installing Git</a>.</p>
+      
+      <h2 class="govuk-heading-m" id="resources">Resources</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.codecademy.com/learn/learn-git" target="_blank">
+            Codecademy - Learn Git 
+          </a>
+        </li>
+        <li>
+          <a href="https://govuk-prototype-kit.herokuapp.com/docs/setting-up-git" target="_blank">
+            GOV.UK Prototype Kit - Setting up Git using the terminal
+          </a>
+        </li>
+        <li>
+          <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">
+           GitHub - Git Cheat Sheet
+          </a>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m" id="resources">Tips</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>You can use a Git GUI (graphical user interface) if you want to use Git without using the command line. <a href="getting-set-up#git-gui">Read more about which Git GUIs are avilable for your Mac</a>.</li>
+        
+        <li>Visual Studio Code also provides a basic interface for working with Git.</li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="nunjucks" class="page-nav__next">Next: <strong>Nunjucks</strong></a></div>
+        <div><a href="terminal" class="page-nav__prev">Previous: <strong> Terminal</strong></a></div>
+      </nav>
+    </div>
+  </div>
+
+{% endblock %}

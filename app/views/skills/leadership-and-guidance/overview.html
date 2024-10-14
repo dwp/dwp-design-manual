@@ -1,0 +1,29 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Leadership and guidance" %}
+{% block pageTitle %}
+  {{pagename}} overview
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    We have a collective responsibility for the design of DWP’s services, even if we don't work on each one directly. By sharing our experience, at any level, we are able to help maintain a high standard.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    All designers, regardless of their level, should be objective, approachable and help to educate those around us, rather than dictate to them.
+  </p>
+  <p class="govuk-body">
+    Challenge and critique must be constructive, whether it’s face to face or any other channel. When looking at others' work you should try to put yourself in their shoes. Think about the constraints they're facing.
+  </p>
+  <p class="govuk-body">
+    We shouldn't wait for permission. By being a design advocate we can help teams recognise and prioritise problems. We can help them understand what will give the greatest benefit to users. What can be a quick win, and what won’t bring benefits and may have a negative impact.
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

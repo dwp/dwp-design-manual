@@ -1,0 +1,212 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+Express
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        Express
+      </h1>
+    </div>
+  </div>
+
+  <div class="flex-layout flex-layout--rev">
+    <div class="flex-layout__sidebar">
+
+      <aside class="app-related-items" role="complementary" style="float-right">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contents
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#about">
+                What is Express?
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#routing">
+                Routing
+              </a>
+              <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+                <li>
+                  <a class="govuk-link" href="#url">
+                    Catch a request to a URL
+                  </a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#vars">
+                    Accessing session data variables
+                  </a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#if-else">
+                    If / else statements
+                  </a>
+                </li>
+                <li>
+                  <a class="govuk-link" href="#get-post">
+                    GET vs POST
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="govuk-link" href="#resources">
+                More resources
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+    <div class="flex-layout__main">
+      <h2 class="govuk-heading-m" id="about">What is Express?</h2>
+      <p>Express is the web application framework used by the GOV.UK Prototype Kit. It is based on <a href="/javascript">JavaScript</a>. Knowing a little about Express will help you understand the way routing works and implement <a href="https://govuk-prototype-kit.herokuapp.com/docs/examples/branching" target="_blank">branching</a> in your projects.</p>
+
+      <p>Express is installed as part of installing the Prototype Kit - there is nothing to install separately.</p>
+      
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="routing">Routing</h2>
+      <p>Routing essentially means how an application (or website) responds to URLs (which stands for Uniform Resource Locator - a unique web address basically. Sometimes also referred to as URI, or Uniform Resource Indentifier).</p>
+      <p>In the Prototype Kit, if you create a view (or page) in <code>app/views</code> called <code>test.html</code>, you can then navigate to it by going to <code>localhost:3000/test</code> in your browser. This is down the routing that is built into the kit: there is Express code that is 'catching' the request to <code>/test</code> and returning <code>test.html</code>.</p>
+      <p>The Prototype Kit includes a file in your <code>app</code> folder called <code>routes.js</code>. You can put your own code in there that 'catches' calls to given URLs (or web addresses), and then do stuff.</p>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s" id="url">Catch a request to a URL</h3>
+        <pre class="snippet govuk-!-margin-bottom-2">{{ "router.get('/page1', function (req, res) {
+  res.redirect('/page2')
+})" | escape }}</pre>
+        <p>Placed in your <code>routes.js</code> file, the above example code will 'catch' a request to <code>localhost:3000/page1</code> and return a view called <code>page2.html</code>.</p>
+      </div>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s" id="vars">Accessing variables from session data in your routes</h3>
+        <p>You will be familiar with variables if you've covered some of the <a href="javascript">JavaScript</a> or <a href="nunjucks">Nunjucks</a> resources.</p>
+        <p>Session data is information that the Prototype Kit stores in the browser as a user interacts with it. The value of a text input, a checkbox being selected or a radio button being selected for example.</p>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ "req.session.data['full-name']" | escape }}</pre>
+        <p>The above example code is the syntax to access any session data or variables in your prototype.</p>
+      </div>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s" id="if-else">If / else statements</h3>
+        <p>Sometimes known as 'conditional statements', these let you do different things in your routes depending on the value of something, for example:</p>
+        <pre class="snippet govuk-!-margin-bottom-2">{{ "router.get('/superhero-answer', function (req, res) {
+  const fullName = req.session.data['full-name']
+  if (fullName === 'Clark Kent') {
+    res.redirect('/superman')
+  } else {
+    res.redirect('/not-superman')
+  }
+})" | escape }}</pre>
+        <p>Placed in your <code>routes.js</code> file, the above code will 'catch' a request to <code>localhost:3000/superhero-answer</code>, establish the value of the <code>full-name</code> session variable, and then return different views according to that.</p>
+ 
+        <p>You can also make use of <code>else if</code> in your conditional statements if necessary:</p>
+        <pre class="snippet govuk-!-margin-bottom-2">{{ "router.get('/superhero-answer', function (req, res) {
+  const fullName = req.session.data['full-name']
+  if (fullName === 'Clark Kent') {
+    res.redirect('/superman')
+  else if (fullName === 'Bruce Wayne') {
+    res.redirect('/batman')
+  } else {
+    res.redirect('/not-superhero')
+  }
+})" | escape }}</pre>
+        <p>The syntax of the if / else statements is just standard <a href="javascript">JavaScript</a> - it's the bit around the routing that's specific to Express.</p>
+        <p>The <code>===</code> is called a comparison, see a <a href="hhttps://www.w3schools.com/js/js_comparisons.asp" target="_blank"> full list of JS comparisons</a>.</p>
+
+        <p>You can also string different conditions together using <code>&&</code> (which means 'and') and <code>||</code> (meaning 'or'):</p>
+
+        <pre class="snippet">{{ "router.get('/superhero-answer', function (req, res) {
+  const fullName = req.session.data['full-name']
+  if (fullName === 'Clark Kent' || fullName === 'Bruce Wayne') {
+    res.redirect('/superhero')
+  } else {
+    res.redirect('/not-superhero')
+  }
+})" | escape }}</pre>
+
+        <pre class="snippet">{{ "router.get('/superhero-answer', function (req, res) {
+  const fullName = req.session.data['full-name']
+  const otherName = req.session.data['other-name']
+  if (fullName === 'Clark Kent' && otherName === 'Bruce Wayne') {
+    res.redirect('/ultimate-superhero')
+  } else {
+    res.redirect('/not-superhero')
+  }
+})" | escape }}</pre>
+      </div>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s" id="get-post">GET vs POST</h3>
+        <p>You'll sometimes see different syntax in Express routing: <code>router.get('...')...</code> and <code>router.post('...')...</code></p>
+        <p>If you want to catch a URL that's being accessed via a hyperlink, use <code>get</code>.</p>
+        <p>If you want to catch a URL that's the result of a form being submitted, the URL it will go to is the <code>action</code> attribute, and you will have to match the <code>method</code> attribute for whether it's a <code>get</code> or a <code>post</code>.</p>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">HTML in view for 'get'</h3>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '<form action="superhero-answer" method="get">...' | escape }}</pre>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">routes.js</h3>
+        <pre class="snippet">{{ "router.get('...')..." | escape }}</pre>
+        
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">HTML in view for 'post'</h3>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '<form action="superhero-answer" method="post">...' | escape }}</pre>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">routes.js</h3>
+        <pre class="snippet">{{ "router.post('...')..." | escape }}</pre>
+
+        <p><a href="https://www.w3schools.com/tags/att_form_method.asp" target="_blank">Read more about the method attribute on HTML forms</a></p>
+      </div>
+ 
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="resources">More resources</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.codecademy.com/learn/learn-express" target="_blank">
+            Codecademy - Learn Express
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tutorialspoint.com/expressjs/index.htm" target="_blank">
+            Tutorials Point - Express Tutorial
+          </a>
+        </li>
+        <li>
+          <a href="https://expressjs.com/en/guide/routing.html" target="_blank">
+            Express - Routing documentation
+          </a>
+        </li>
+        <li>
+          <a href="https://govuk-prototype-kit.herokuapp.com/docs/examples/branching" target="_blank">
+            GOV.UK Prototype Kit - Branching example
+          </a>
+        </li>
+        <li>
+          <a href="https://govuk-prototype-kit.herokuapp.com/docs/creating-routes" target="_blank">
+            GOV.UK Prototype Kit - Creating routes
+          </a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="/prototype-kit-training" class="page-nav__next">Next: <strong>Prototype Kit Training home</strong></a></div>
+        <div><a href="nunjucks" class="page-nav__prev">Previous: <strong> Nunjucks</strong></a></div>
+      </nav>
+ 
+    </div>
+
+  </div>
+
+{% endblock %}

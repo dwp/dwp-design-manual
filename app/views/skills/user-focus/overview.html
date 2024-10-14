@@ -1,0 +1,32 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "User focus" %}
+{% block pageTitle %}
+  {{pagename}} overview
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    We consider all users in our services. Regardless of their background or ability or access to technology. We design for all.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    Our users are citizens and colleagues in DWP or other government departments.
+  </p>
+  <p class="govuk-body">
+    We must have a deep understanding of our users to meet their needs.
+  </p>
+  <p class="govuk-body">
+    Designers work closely with user researchers to identify user needs and any existing problems within a product or service. We help with different research methods, including interviews, data analysis, and feedback. We use this information to create assumptions and hypotheses. We then help to create a research plan to validate or invalidate these hypotheses. 
+  </p>
+  <p class="govuk-body">
+    Designers must be able to empathise with users and understand their goals. We must also help those around us to build empathy and understanding. For example, encouraging the whole team to get involved in research activities. 
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

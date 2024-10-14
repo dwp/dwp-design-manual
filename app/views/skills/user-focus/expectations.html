@@ -1,0 +1,45 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "User focus" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>learn how to be the voice of the user and represent them when discussing your work</li>
+    <li>be involved and support research in your team</li>
+    <li>consider the needs of all users when making design decisions</li>
+    <li>understand accessibility best practice</li>
+    <li>understand the difference between accessibility, low digital skills and limited access to technology</li>
+    <li>understand the difference between user needs and user wants</li>
+    <li>understand the difference between observed, assumed and interpreted user behaviour</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>encourage others around you to take a user centered approach</li>
+    <li>take an active role in the research strategy in order to learn about users</li>
+    <li>design for accessibility first and champion accessibility best practice</li>
+    <li>be deliberate in your choice of language when discussing user research</li>
+    <li>make sure those around you are clear about what was observed, assumed and interpreted</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>be an ambassador for user centered design. Reinforce the benefits of working in this way to senior leaders</li>
+    <li>look for opportunities for teams to share research and learning</li>
+    <li>share collective learning about users with senior leaders</li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../expectations_menu.njk" %}
+{% endblock %}

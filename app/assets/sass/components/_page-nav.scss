@@ -1,0 +1,48 @@
+// Page nav (used in Prototype Kit training resources)
+.page-nav {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 1.25rem;
+  a {
+    display: inline-block;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 0 14px;
+  }
+  &:after {
+    content: '';
+    clear: both;
+  }
+}
+
+.page-nav__prev:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  margin: auto 0;
+  transform: rotate(225deg);
+  border: solid;
+  border-width: 1px 1px 0 0;
+  border-color: #505a5f;
+}
+
+.page-nav__next:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 3px;
+  width: 7px;
+  height: 7px;
+  margin: auto 0;
+  transform: rotate(45deg);
+  border: solid;
+  border-width: 1px 1px 0 0;
+  border-color: #505a5f;
+}

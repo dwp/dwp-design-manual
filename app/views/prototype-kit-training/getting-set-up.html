@@ -1,0 +1,148 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+Getting set up with the right tools
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">Before you start</span>
+        Getting set up with the right tools
+      </h1>
+    </div>
+  </div>
+  <div class="flex-layout flex-layout--rev">
+    <div class="flex-layout__sidebar">
+
+      <aside class="app-related-items" role="complementary" style="float-right">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contents
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#editor">
+                Text / Code editor
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#node">
+                Node.js
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#git">
+                Git
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#git-gui">
+                Git Graphical User Interface (GUI)
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+    <div class="flex-layout__main">
+      <p>Before you start using the GDS Prototype Kit, it's worth getting the right tools installed on your Mac. It might seem like a bit of a hassle - but you should hopefully only have to do it once.</p>
+
+      <h2 class="govuk-heading-m">Text / Code editor</h2>
+      <p>You will need this to edit the code in any prototype you work on. A code editor is essentially a text editor, but with additional tools for editing code: things like colour schemes to highlight different coding languages and tools to help you format your code.</p>
+      <p>The following are available through the Self Service application on your Mac:</p>
+      
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2" id="vscode">Visual Studio Code (VS Code)</h3>
+      <p class="govuk-!-margin-bottom-2">An industry standard code editor that can be customised with a wide range of free 'extensions' and an in-built Terminal for using the command line.</p>
+      <p><a href="https://code.visualstudio.com/docs/getstarted/introvideos" target="_blank">Visual Studio Code documentation</a></p>
+      
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2" id="atom">Atom</h3>
+      <p class="govuk-!-margin-bottom-2">A popular editor that is a little simpler than Visual Studio Code, but with less available extensions.</p>
+      <p><a href="https://flight-manual.atom.io/" target="_blank">Atom documentation</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="node">Node.js</h2>
+      <p>Node.js is a JavaScript-based server environment that the Prototype Kit runs on. Before using the kit, you will need to manually install the right version of Node.js from the Self Service application on your Mac. Other than that, you don't really need to know anything about Node.js to use the kit.</p>
+
+      <div class="govuk-inset-text">
+        <p>You can check whether Node.js is installed on your machine by going to <a href="terminal">Terminal</a> and typing:</p>
+        <pre class="snippet snippet--terminal">node --version</pre>
+
+        <p>If Node.js is not already installed it will return:</p>
+        <pre class="snippet snippet--terminal">command not found</pre>
+        <p>Otherwise, it will return the version you have installed.</p>
+      </div>
+      
+      <p>If you are starting a new prototype, any version of Node.js v14 or v15 will work. These versions are available from the Self Service application on your Mac.</p>
+
+      <p>If you are picking up an old prototype, look at <code>"engines"</code> in the file called <code>package.json</code> in the prototype folder - this will tell you which version of Node.js to install (again, from the Self Service application on your Mac).</p>
+
+      <p>If you find yourself having to switching between different versions of Node.js to work on different prototypes, you might want to consider using <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm (node version manager)</a> - a useful tool that lets you use different Node.js versions per project. <a href="help">Ask for help</a> you if you want to do this. But you shouldn't need that in a first instance.</p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="git">Git</h2>
+      <p>You will need to install <a href="git">Git</a> on your machine in order to save any work you do on a prototype. Do this by installing the 'Xcode 12 Command Line Tools' from the Self Serve application on your Mac.</p>
+
+      <div class="govuk-inset-text">
+        <p>You can check whether Git is installed on your machine by going to <a href="terminal">Terminal</a> and typing:</p>
+        <pre class="snippet snippet--terminal govuk-!-margin-bottom-4">git version</pre>
+
+        <p>If Git is not already installed it will return a dialogue stating:</p>
+
+        <p><img src="/public/images/git-not-installed.png" alt="Image of modal displaying: The \"git\" command requires the command line developer tools...[Cancel] or [Install]."></p>
+        
+        <!-- <p><strong>The "git" command requires the command line developer tools...<br>
+          [Cancel] or [Install].</strong></p> -->
+
+        <p>If this is the case, press '<strong>Cancel</strong>' and install the 'Xcode 12 Command Line Tools' from the Self Serve application on your Mac. Note: if you have installed Git through this dialogue, it's not a problem - it's just better practice to do it via Self Service.</p>
+
+        <p>If Git is installed, it will return the version.</p>
+      </div>
+      
+      <p>The GOV.UK Prototype Kit documentation has further information about <a href="https://govuk-prototype-kit.herokuapp.com/docs/setting-up-git" target="_blank">setting up Git</a>.</p>
+
+      <!-- <p>You might also want to set up <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">ssh keys</a>.</p> -->
+      
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="git-gui">Git Graphical User Interface (GUI)</h2>
+      <p>There are various tools available which let you run Git commands without having to rely on using the command line in <a href="terminal">Terminal</a>. These are entirely optional, and it could be argued that it's better to interact with Git via Terminal - it's an opportunity to hone your command line skills for a start.</p>
+
+      <p>There are various Git GUIs available through the Self Service application on your Mac:</p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2" id="sourcetree">SourceTree</h3>
+      <p class="govuk-!-margin-bottom-2">An industry standard Git GUI that lets you visualise your Git workflow.</p>
+      <p class="govuk-!-margin-bottom-2"><a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree website</a></p>
+      <p><a href="https://support.atlassian.com/bitbucket-cloud/docs/tutorial-learn-bitbucket-with-sourcetree/" target="_blank">Learn SourceTree</a></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2" id="github-desktop">GitHub Desktop</h3>
+      <p class="govuk-!-margin-bottom-2">A Git GUI specifically for GitHub repositories.</p>
+      <p class="govuk-!-margin-bottom-2"><a href="https://desktop.github.com/" target="_blank">GitHub Desktop website</a></p>
+      <p><a href="https://docs.github.com/en/desktop" target="_blank">GitHub Desktop help</a></p>
+
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-2" id="vscode">Visual Studio Code (VS Code)</h3>
+      <p class="govuk-!-margin-bottom-2">This code editor has a basic Git interface, which might well be enough for running Git Commands for your prototyping work.</p>
+      <p><a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support" target="_blank">Visual Studio Code Git documentation</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <nav class="page-nav">
+        <div><a href="help" class="page-nav__next">Next: <strong>Getting help and asking questions</strong></a></div>
+        <div><a href="how-things-fit-together" class="page-nav__prev">Previous: <strong>How Things Fit Together</strong></a></div>
+      </nav>
+
+    </div>
+
+  </div>
+
+{% endblock %}

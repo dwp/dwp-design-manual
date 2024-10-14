@@ -1,0 +1,116 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+About the GOV.UK Prototype Kit
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        <span class="govuk-caption-l">Before you start</span>
+        About the GOV.UK Prototype Kit
+      </h1>
+    </div>
+  </div>
+
+
+  <div class="flex-layout flex-layout--rev">
+    <div class="flex-layout__sidebar">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contents
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#what-is-it">
+                What is the GOV.UK Prototype Kit?
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#components">
+                Components of the Prototype Kit
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#when-to-use">
+                When should I use the Prototype Kit?
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#accessibility">
+                The Prototype Kit and accessibility
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    
+    <div class="flex-layout__main">
+      <h2 class="govuk-heading-m" id="what-is-it">What is the GOV.UK Prototype Kit?</h2>
+
+      <p class="govuk-body-l">"The GOV.UK Prototype Kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research."</p>
+      
+      <p>The Prototype Kit is a powerful tool for performing usability testing of a digital service with real users and gain insight into why a particular design does or doesn’t work. Its strength is in creating fully interactive experiences.</p>
+
+      <p>The GOV.UK Prototype Kit contains all the necessary design patterns and components needed to make pages that look like GOV.UK pages.</p>
+
+      <p>There are a number of comprehensive <a href="https://govuk-prototype-kit.herokuapp.com/docs/tutorials-and-examples" target="_blank">tutorials and examples</a> available on the GOV.UK site, however knowing a few web development basics will make it easier to follow these and troubleshoot independently. As a result, these pages aim to supplement the official documentation with related skills and resources.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="components">Components of the Prototype Kit</h2>
+
+      <p>Technically there are three component parts of the Prototype Kit:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://design-system.service.gov.uk/" target="_blank">The GOV.UK Design System</a>: the documentation for all the styles, components and patterns.</li>
+        <li><a href="https://github.com/alphagov/govuk-frontend" target="_blank">govuk-frontend</a>: contains the code used by developers to build user interfaces for government services. As a designer, you don't really need to worry about this as it is included in the Prototype Kit.</li>
+        <li><a href="https://govuk-prototype-kit.herokuapp.com/docs" target="_blank">GOV.UK Prototype Kit</a>: a simple web application that contains govuk-frontend and that can be used by designers to rapidly create interactive prototypes as per the GOV.UK Design System.</li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="when-to-use">When should I use the Prototype Kit?</h2>
+      <p>It’s probably best not to design pages and journeys directly in the Prototype Kit. Its strength lies in simulating real interactions with a digital service, not designing them. Unless you are particularly proficient with your code, do the problem solving and design before building a prototype in the kit.</p>
+      
+      <p>A few things to think about:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>It's a prototype - your code doesn't have to perfect.</li>
+        <li>Whilst your code doesn't have to be 'production standard', think about documenting what you do - someone else will have to pick up your prototype at some point.</li>
+        <li>It's a design artefact, not precise documentation for what is going to be built. You don't necessarily have to design and feature every page in a service in your prototype - just what is useful for the design process and what is pertinent to the research you want to conduct.</li>
+        <li>You don't necessarily have to implement full validation for your forms in your prototypes - just what is pertinent to what you need to test and research. See Craig Abbott's blog '<a href="http://www.craigabbott.co.uk/blog/validation-for-prototypes" target="_blank">Validation for prototypes</a>'.</li>
+        <li>Be wary of making your prototypes too 'clever' - it might seem useful in the short term to introduce some whizzy JavaScript, but you might be making it very hard for another designer to pick-up in the medium term.</li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="accessibility">The Prototype Kit and accessibility</h2>
+
+      <p>Accessibility is a crucial part of your role as a designer at DWP. As such, your prototypes should be designed in an accessible fashion. In terms of your code, you should try to make it accessible, but it isn't necessarily the focus of using the kit: you're not expected to feature fully accessible, production-ready code.</p>
+
+      <p>However, by using the GOV.UK Design System, your prototypes should be accessible to an extent. Understanding the basics of <a href="html">HTML</a> - and the related good practice - will also help you implement accessible prototypes. You should also be encouraged to test your prototypes with users with accessibility needs: if you do this, the accessibility of your code will be crucial.</p>
+
+      <p>Read more in the <a href="https://accessibility-manual.dwp.gov.uk/guidance-for-your-job-role/interaction-designer" target="_blank">DWP  Accessibility Manual - Guidance for Interaction Designers</a>.</p>
+      
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <nav class="page-nav">
+        <div><a href="how-things-fit-together" class="page-nav__next">Next: <strong>How things fit together</strong></a></div>
+        <div><a href="/" class="page-nav__prev">Previous: <strong>Home</strong></a></div>
+      </nav>
+    </div>
+
+   
+
+  </div>
+
+{% endblock %}

@@ -1,0 +1,125 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+How things fit together
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+<h1 class="govuk-heading-xl">
+  <span class="govuk-caption-l">Before you start</span>
+  How things fit together
+</h1>
+
+<h2 class="govuk-heading-l">On your computer</h2>
+
+<div class="how-things-fit">
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/terminal.png" alt="Terminal icon">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Terminal</h3>
+      <p>Used to install, start and stop the Prototype Kit and optionally run Git commands using the Command Line.</p>
+    </div>
+  </div>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/code-editor.png" alt="Visual Studio Code and Atom icons">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Visual Studio Code or Atom</h3>
+      <p>Text / code editors used to edit the Prototype Kit code.</p>
+    </div>
+  </div>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/prototype-kit.png" alt="GOV.UK Prototype Kit icon">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">GOV.UK Prototype Kit</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Edit content using HTML and Nunjuck ‘macros’</li>
+        <li>Edit styles using CSS</li>
+        <li>Dynamic features using JavaScript</li>
+        <li>Following the GOV.UK Design System</li>
+        <li>Styles come from govuk-frontend</li>
+        <li>Underlying framework is Express</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/git-gui.png" alt="SourceTree and GitHub Desktop icons">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">SourceTree or GitHub Desktop</h3>
+      <p>A graphical user interface (GUI) if you want to run Git commands without using Terminal.</p>
+    </div>
+  </div>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/git.png" alt="Git icon">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Git</h3>
+      <p>Git is used to version control any changes you make to the prototype code.</p>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+  <h2 class="govuk-heading-l">On the web</h2>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/git-repo.png" alt="GitLab or GitHub icon">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">GitLab or GitHub</h3>
+      <p>Prototype code is stored in a Git repository (a central storage area)  on one of these platforms.</p>
+    </div>
+  </div>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/heroku.png" alt="Heroku icon">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Heroku</h3>
+      <p>Prototype is available on Heroku servers, and deployed from GitLab or GitHub.</p>
+    </div>
+  </div>
+
+  <div class="how-things-fit__row">
+    <div class="how-things-fit__img">
+      <img src="{{ asset_path }}images/laptop.png" alt="Laptop icon">
+    </div>
+    <div class="how-things-fit__text">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Your prototype</h3>
+      <p>Prototype is visible on the web, served up from Heroku servers.</p>  
+    </div>
+  </div>
+</div>
+
+<div class="how-things-fit__row">
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <nav class="page-nav">
+      <div><a href="getting-set-up" class="page-nav__next">Next: <strong>Getting set-up</strong></a></div>
+      <div><a href="about" class="page-nav__prev">Previous: <strong>What is it?</strong></a></div>
+    </nav>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+.dwp-header {
+  color: white;
+  background-color: black;
+  padding: 12px 0;
+  border-bottom: 10px solid $dwp-primary-color;
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 28px;
+    span { font-weight: normal; font-size: 22px; margin-left: 10px; }
+  }
+}
+
+.dwp-header__wrapper {
+  margin: 0 auto;
+}

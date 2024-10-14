@@ -1,0 +1,53 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Prototyping" %}
+
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+<h2 class="govuk-heading-m">Training</h2>
+<ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+  <li>
+    <a href="https://dwp-design-manual.herokuapp.com/prototype-kit-training">Training for designers using the Prototype Kit</a>
+    <span>Free resources to give you a solid grasp of the web development skills needed to use the GOV.UK Prototype Kit effectively</span>
+    </li>
+  <li>
+    <a href="https://design-system.service.gov.uk/get-started/prototyping">GOV.UK Prototype kit</a>
+    <span>Guidance on getting started with the GOV.UK prototype kit.</span>
+  </li>
+  <li>
+    <span><a href="https://design-system.service.gov.uk/">GOV.UK Design system</a></span>
+    <span>Make your service consistent with GOV.UK.</span>
+  </li>
+</ul> 
+
+
+  <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://uxdesign.cc/how-to-do-paper-prototyping-719173215a7e">How to do paper prototyping, the UX tool you may be missing</a></span>
+      <span>By Patrick Thornton (2019)</span>
+    </li>
+    <li>
+      <span><a href="https://vickyteinaki.com/blog/more-efficient-prototyping-with-the-gov-uk-prototype-kit-step-by-step/">More Efficient Prototyping with the GOV.UK Prototype Kit</a></span>
+      <span>By Vicky Teinaki</span>
+    </li>
+    <li>
+      <span><a href="https://www.w3schools.com/html/default.asp">W3C schools.com</a></span>
+      <span>Free HTML and CSS reference and tutorials.</span>
+    </li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

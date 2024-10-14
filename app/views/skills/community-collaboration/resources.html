@@ -1,0 +1,43 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Community collaboration" %}
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  {% include "../resource_statement.njk" %}
+  <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://uxdesign.cc/how-to-do-paper-prototyping-719173215a7e">How to do paper prototyping, the UX tool you may be missing</a></span>
+      <span>By Patrick Thornton (2019)</span>
+    </li>
+    <li>
+      <span><a href="https://www.w3schools.com/html/default.asp">W3C schools.com</a></span>
+      <span>Free HTML and CSS reference and tutorials.</span>
+    </li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">From GOV.UK</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://design-system.service.gov.uk/">GOV.UK Design system</a></span>
+      <span>Make your service consistent with GOV.UK.</span>
+    </li>
+    <li>
+      <a href="https://design-system.service.gov.uk/get-started/prototyping">GOV.UK Prototype kit</a>
+      <span>Guidance on getting started with the GOV.UK prototype kit.</span>
+    </li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

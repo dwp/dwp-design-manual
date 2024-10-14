@@ -1,0 +1,32 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Working within constraints" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>recognise constraints and where they have come from. for example, are they because of policy, technology, or time and resource?</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>seek out policy. understand it and its intent for a service</li>
+    <li>know when it’s right to challenge constraints and when it’s right to compromise</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>look for opportunities to remove constraints and influence policy changes through design and research</li>
+  </ul> 
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../expectations_menu.njk" %}
+{% endblock %}

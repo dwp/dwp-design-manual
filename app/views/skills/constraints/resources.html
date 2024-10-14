@@ -1,0 +1,25 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Working within constraints" %}
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://medium.com/swlh/for-a-more-creative-brain-embrace-constraints-5a588c8a8619">For a more creative brain, embrace constraints</a></span>
+      <span>by Thomas Oppong (2018)</span>
+    </li>
+  </ul> 
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

@@ -1,0 +1,273 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+        <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+      </h1>{{releaseVersion | log }}
+    </div>
+  </div>
+  <div class="flex-layout flex-layout--rev">
+    <div class="flex-layout__main">
+      <p>These resources will give you a solid grasp of the web development skills needed to use the <a href="https://govuk-prototype-kit.herokuapp.com/" target="_blank">GOV.UK Prototype Kit</a> effectively.</p>
+      <p>Use them in addition to the <a href="https://govuk-prototype-kit.herokuapp.com/docs/tutorials-and-examples" target="_blank">tutorials and examples</a> published on GOV.UK to get the most out of your prototypes.</p>
+
+
+      <!-- <p>There is comprehensive information available on <a href="https://govuk-prototype-kit.herokuapp.com/docs/install/introduction" target="_blank">how to install the GOV.UK Prototype Kit</a> as well as some <a href="https://govuk-prototype-kit.herokuapp.com/docs/tutorials-and-examples" target="_blank">tutorials and examples</a> - but these can be hard to understand without some basic web development knowledge.</p>
+      <p>This page is aimed at designers who are new to web development. It provides additional free resources that will help you gain an understanding of the principles that sit behind the GOV.UK Prototype Kit, and give you the basic skills necessary to use the kit and troubleshoot more independently.</p> -->
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Should I use Codecademy or W3Schools?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>We feature resources from both of these platforms. You shouldn't have to do both and will probably quickly work out which you prefer:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li><a href="https://www.codecademy.com" target="_blank">Codecademy</a>: easy to follow interactive courses. More resources are available at a cost.</li>
+            <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a>: easy to follow interactive guides, but in a different less modern style.</li>
+          </ul>
+          <p>Where no free resources are available on Codecademy or W3Schools, we've identified alternative ones.</p>
+          <p>There are some other great platforms for tutorials if you are willing to pay: <a href="https://teamtreehouse.com/" target="_blank">Treehouse</a> for example.</p>
+          <p>Feel free to <a href="/feedback">recommend other resources</a>.</p>
+        </div>
+      </details>
+
+      <ol class="app-task-list govuk-!-margin-top-9">
+        <li>
+          <h2 class="app-task-list__section" id="before-you-start">
+            <span class="app-task-list__section-number">1. </span> Before you start
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="/how-things-fit-together" aria-describedby="eligibility-status">
+                  How things fit together
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong> -->
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="getting-set-up" aria-describedby="read-declaration-status">
+                  Getting set up with the right tools
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong> -->
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="help" aria-describedby="read-declaration-status">
+                  Getting help and asking questions
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Completed</strong> -->
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number" id="html">2. </span> HTML
+          </h2>
+          <p class="govuk-hint app-task-list__description">You will need to learn HTML to use the GOV.UK Prototype Kit. It is the standard markup language for all web pages and is easy to learn.</p>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="https://www.codecademy.com/learn/learn-html/" target="_blank">
+                Codecademy
+                </a>
+              </span>
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="https://www.w3schools.com/html/default.asp" target="_blank">
+                  W3Schools
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong> -->
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number" id="css">3. </span> CSS
+          </h2>
+          <p class="govuk-hint app-task-list__description">CSS is the language used to style an HTML document. It is useful to know a bit of CSS if you need to change the way components in the GOV.UK Design System look.</p>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="https://www.codecademy.com/learn/learn-css" target="_blank">
+                Codecademy
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag app-task-list__tag" id="company-information-status">free</strong> -->
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="https://www.w3schools.com/css/default.asp" target="_blank">
+                  W3Schools
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong> -->
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number" id="js">4. </span> JavaScript
+          </h2>
+          <p class="govuk-hint app-task-list__description">JavaScript (JS) powers the dynamic features on most websites. In the Prototype Kit, it can be useful to know a little: for validating forms or changing the way a page behaves depending on a user's actions for example.</p>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">
+                Codecademy  - Introduction, Conditionals and Functions
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag app-task-list__tag" id="company-information-status">free</strong> -->
+            </li>
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="https://www.w3schools.com/js/default.asp" target="_blank">
+                  W3Schools - up to 'JS Comparisons'
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong> -->
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number" id="tools">5. </span> Other tools and skills
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item govuk-!-padding-top-4 govuk-!-padding-bottom-4">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Git</h3>
+              <p class="govuk-hint">Git is the industry standard version control tool. Developers use it to store their code, collaborate and track all changes. You will need to know Git basics to access prototypes others have set up, save any changes you make to the code and deploy them.</p>
+              <span class="app-task-list__task-name">
+                <a href="https://www.codecademy.com/learn/learn-git" target="_blank">
+                Learn Git - Codecademy
+                </a>
+              </span>
+              <!-- <strong class="govuk-tag app-task-list__tag" id="company-information-status">free</strong> -->
+            </li>
+            <li class="app-task-list__item govuk-!-padding-top-4 govuk-!-padding-bottom-4">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Terminal</h3>
+              <p class="govuk-hint">The Terminal application (sometimes referred to as 'the command line') is a text-only interface for your computer. Knowing a few basics will help you install, start and stop the Prototype Kit.</p>
+              <div>
+                <a href="terminal">
+                  Introduction to Terminal
+                </a>
+              </div>
+            </li>
+            <li class="app-task-list__item govuk-!-padding-top-4 govuk-!-padding-bottom-4">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Nunjucks</h3>
+              <p class="govuk-hint">Nunjucks is the templating framework used by the GOV.UK Prototype Kit. Nunjucks can provide shortcuts for common page elements so you don’t have to repeat the same chunks of HTML throughout a project - these are called 'macros'.</p>
+              <div>
+                <a href="nunjucks">
+                  Introduction to Nunjucks
+                </a>
+              </div>
+              <!-- <div>
+                <a href="https://www.smashingmagazine.com/2018/03/static-site-with-nunjucks/" target="_blank">
+                  Smashing Magazine - Building A Static Site With Components Using Nunjucks
+                </a>
+              </div>
+              <div class="govuk-!-margin-top-2">
+                <strong class="govuk-tag govuk-tag--yellow" id="company-information-status">Better resource needed: this is too in-depth</strong>
+              </div> -->
+            </li>
+            <li class="app-task-list__item govuk-!-padding-top-4 govuk-!-padding-bottom-4">
+              <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Express</h3>
+              <p class="govuk-hint"> is the web application framework used by the GOV.UK Prototype Kit. Knowing a little about  will help you implement <a href="https://govuk-prototype-kit.herokuapp.com/docs/examples/branching" target="_blank">branching</a> in your projects and understand the way the files in the kit are structured.</p>
+              
+              <div>
+                <a href="https://www.codecademy.com/learn/learn-express" target="_blank">
+                  Codecademy - Learn 
+                </a>
+              </div>
+              <div>
+                <a href="https://www.tutorialspoint.com//index.htm" target="_blank">
+                  Tutorials Point -  Tutorial
+                </a>
+              </div>
+              <div class="govuk-!-margin-top-2">
+                <strong class="govuk-tag govuk-tag--yellow" id="company-information-status">Better resource needed: these are too in-depth</strong>
+              </div>
+            </li>
+          </ul>
+        </li>
+
+      </ol>
+
+      <p>You should now be a good position to <a href="https://govuk-prototype-kit.herokuapp.com/docs/install/introduction" target="_blank">install the GOV.UK Prototype Kit</a> and follow the <a href="https://govuk-prototype-kit.herokuapp.com/docs/tutorials-and-examples" target="_blank">tutorials and examples</a> available on the GOV.UK Prototype Kit site.</p>
+      
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="feedback">Feedback and recommendations</h2>
+      <p>Feel free to <a href="/feedback">feedback to us</a> with any comments or resource recommendations.</p>
+
+    </div>
+
+    <div class="flex-layout__sidebar">
+
+      <aside class="app-related-items" role="complementary" style="float-right">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contents
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ol class="govuk-list govuk-list--number govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#before-you-start">
+                Before you start
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#html">
+                HTML
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#css">
+                CSS
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#js">
+                JavaScript
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#tools">
+                Other tools and skills
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#feedback">
+                Feedback and recommendations
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+
+  </div>
+
+{% endblock %}

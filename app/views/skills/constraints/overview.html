@@ -1,0 +1,26 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Working within constraints" %}
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    All designers face constraints in their work. Time, budget, technology and policy all impact the delivery of services.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    Effective designers are able to work within realistic constraints. We understand that these constraints help guide what we can deliver now and, in the future.
+  </p>
+  <p class="govuk-body">
+    We must also learn to recognise and challenge false constraints. These can sometimes be caused by miscommunication or assumptions. We must not take ‘Its always been that way’, for an answer and look for ways to make things as simple as possible for users. 
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

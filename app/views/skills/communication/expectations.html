@@ -1,0 +1,41 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Communication skills" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>be able to present your work to an audience</li>
+    <li>have good written skills and use plain english</li>
+    <li>use a range of software to create accessible documentation where necessary</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>facilitate workshops. set their agendas to encourage good outcomes, such as clear actions and next steps</li>
+    <li>facilitate discussions within teams, with potentially difficult ideas and opinions. be prepared to challenge and be challenged</li>
+    <li>frame a problem to help others understand it</li>
+    <li>pitch communication at the right level for the audience. explain technical details to non-technical people</li>
+    <li>help teams to think about full journeys</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>look for appropriate opportunities to speak about design in dwp and government</li>
+    <li>help other designers improve their communication skills</li>
+    <li>act as a mediator and be able to resolve conflict</li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../expectations_menu.njk" %}
+{% endblock %}

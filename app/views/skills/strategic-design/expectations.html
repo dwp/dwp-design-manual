@@ -1,0 +1,42 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Strategic design thinking" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>think about problems in a wider context, as well as the individual details in each interaction</li>
+    <li>understand the department’s vision</li>
+    <li>familiarise yourself with what's happening in technology, especially other services that may be used by our users</li>
+    <li>find channels where other designers share their work</li>
+    <li>understand departmental guidelines for sharing your work</li>
+    <li>be able to map out user journeys</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>understand and explain problems in a wider context</li>
+    <li>look for opportunities to join up with other designers across government</li>
+    <li>create maps and blueprints as a means to communicate whole journeys</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>help shape the direction of services being delivered</li>
+    <li>ensure business requirements are being met and exceeded where possible</li>
+    <li>use maps and blueprints to support strategic decision making, focusing on outcomes for a user</li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../expectations_menu.njk" %}
+{% endblock %}

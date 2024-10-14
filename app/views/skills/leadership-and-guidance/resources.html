@@ -1,0 +1,42 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Leadership and guidance" %}
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  {# <h2 class="govuk-heading-m">Books</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span>Lean UX: Designing Great Products with Agile Teams</span>
+      <span>By Jeff Gothelf and Josh Seiden (2013)</span>
+    </li>
+    <li>
+      <span>Design for the Real World</span>
+      <span>By Victor Papanek (1971)</span>
+    </li>
+    <li>
+      <span>The Design of Everyday Things</span>
+      <span>By Don Norman (1988)</span>
+    </li>
+  </ul>  #}
+
+  <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://medium.com/@odannyboy/everything-ive-ever-learned-about-giving-design-critiques-i-learned-from-tim-gunn-c1b7381e493a">Everything I’ve Ever Learned About Giving Design Critiques I Learned from Tim Gunn</a></span>
+      <span>Design critique best practice by Dan Saffer</span>
+    </li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

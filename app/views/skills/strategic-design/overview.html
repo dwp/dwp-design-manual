@@ -1,0 +1,38 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Strategic design thinking" %}
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    Designers must be able to understand problems from both the perspective of the user and the department. 
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    Designers must understand, and help others understand, full user journeys. Whether we work right across a whole journey, or only part of it.
+  </p>
+  <p class="govuk-body">
+    For example, a user discovering they have a need for something. To receiving whatever meets that need, and the key points in-between like finding out what is available and eligibility.
+  </p>
+  <p class="govuk-body">
+    Sometimes we need to have an even wider context. For example, when these journeys cut across services, teams or departments.
+  </p>
+  <p class="govuk-body">
+    Designers must be familiar with what others are building in DWP, government, and the wider digital community. This helps us to understand what's possible, what can be re-used and what a user's expectations are.
+  </p>
+  <p class="govuk-body">
+    This knowledge is the key to creating joined up services that users need and can use. It helps us decide what to focus on now and what we must deliver in the future.
+  </p>
+  <p class="govuk-body">
+    In more senior roles, designers help to make sure the strategic goals of the department align to the needs of our users.
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

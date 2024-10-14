@@ -1,0 +1,33 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Community collaboration" %}
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    All DWP designers must contribute to the design community in the department.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    The need for us to share our designs is vital. By doing so we can reduce the time and cost to get our services and tools to users. It allows us to create more joined up services and focus on the more complex aspects of our work.
+  </p>
+  <p class="govuk-body">
+    We must all share our knowledge, expertise and time with those who need it. This allows us all to grow our understanding and our abilities.
+  </p>
+  <p class="govuk-body">
+    We are proud of our design community in the department. Designers feel like they belong to something worthwhile and in the same spirit with which we build our services, we are all able to help each other.
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  <ul class="govuk-list govuk-list--spaced">
+    <li><a href="expectations">{{pagename}} expectations<a/></li>
+    {# <li><a href="resources">Learn more about {{pagename}}<a/></li> #}
+    <li><a href="../index">All skills and expectations<a/></li>
+  </ul>
+{% endblock %}

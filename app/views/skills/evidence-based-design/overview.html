@@ -1,0 +1,36 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Evidence and context-based design" %}
+
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    We evaluate problems using the evidence gathered from research and data to inform the next iteration of our design, rather than jumping to solutions.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+    The design problems we work on in DWP are not owned by the designer.
+  </p>
+  <p class="govuk-body">
+    Effective designers are able to take themselves out of a problem. They act as curators, pulling everything together while maintaining the integrity of the design. 
+  </p>
+  <p class="govuk-body">
+    Designers must understand the difference between usable and useful. Something can be easy to use but it might not be actually solving the user’s problem.
+  </p>
+  <p class="govuk-body">
+     We should aim to design many viable options and not get too attached to a particular approach. This helps us recognise better solutions, throw away anything that isn't working and learn about our users in the process.
+  </p>
+  <p class="govuk-body">
+    We aim for our products and services to be consistent with others in the department and those on GOV.UK. Consistent, but not uniform. We start with design patterns but if they can be improved or something else works better for our users we use that, and share the reasons why.
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}

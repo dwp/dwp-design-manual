@@ -1,0 +1,22 @@
+
+{% for item in data.planData %}
+    {% if item.Service == servicename %}
+        {% if item.Time == "now" %}
+
+        {% if item.fraudrating == "HIGH" or item.fterating == "HIGH" or item.citizenrating == "HIGH" %}
+        <div class="planproductcardcontainer valuehigh">
+    {% elif item.fraudrating == "MEDIUM" or item.fterating == "MEDIUM" or item.citizenrating == "MEDIUM" %}
+        <div class="planproductcardcontainer valuemed">
+    {% elif item.fraudrating == "LOW" or item.fterating == "LOW" or item.citizenrating == "LOW"  %}
+        <div class="planproductcardcontainer valuelow">
+    {% else %}
+        <div class="planproductcardcontainer valuelow">
+    {% endif %}
+
+        {% include "./product_card_template.html" %}
+        </div>  
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+

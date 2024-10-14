@@ -1,0 +1,45 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Leadership and guidance" %}
+{% block pageTitle %}
+ {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+ {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+ <h2 class="govuk-heading-m">Expectations at associate level</h2>
+ <ul class="govuk-list govuk-list--bullet">
+ <li>find a design buddy (someone you trust to show your work to regularly)</li>
+ <li>know where to get help from other designers and don't be afraid to ask for it</li>
+ <li>understand critique best practice</li>
+ </ul> 
+
+ <h2 class="govuk-heading-m">Expectations at working level</h2>
+ <ul class="govuk-list govuk-list--bullet">
+ <li>be an advocate for user centred design</li>
+ <li>set an example to those around you</li>
+ <li>support other designers and share your experience</li>
+ <li>offer your time to critique other designer’s work</li>
+ <li>help stakeholders and other non-designers understand research and design decisions</li>
+ <li>undergo assessment training and take part in departmental assessments</li>
+ </ul> 
+
+ <h2 class="govuk-heading-m">Expectations at senior level</h2>
+ <ul class="govuk-list govuk-list--bullet">
+ <li>support and mentor others by passing on your experience</li>
+ <li>take an active role in designers’ development. help them identify areas for self-improvement</li>
+ <li>help them to meet or exceed the standards and expectations required of them</li>
+ <li>take responsibility for the design output of dwp</li>
+ <li>highlight areas for improvement in a constructive way</li>
+ <li>work as a representative of the design profession with senior leaders in the department</li>
+ </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+ {% include "../expectations_menu.njk" %}
+{% endblock %}

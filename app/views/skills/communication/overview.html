@@ -1,0 +1,39 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Communication skills" %}
+{% block pageTitle %}
+  {{pagename}}
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">{{pagename}}</h1>
+  <p class="big-bar__description">
+    Design is communication. Therefore, communication skills are the most important tools for any designer.
+  </p>
+{% endblock %}
+
+{% block skillcontent %}
+  <p class="govuk-body">
+  You must be able to confidently and clearly articulate your ideas. This is the key to getting others to understand and follow them.
+  </p>
+  <p class="govuk-body">
+  Importantly, you must also be able to listen. Take onboard other people's opinions, concerns and ideas.
+  </p>
+  <p class="govuk-body">
+  Highly effective designers are able to identify the correct problem to solve. They can unpick what they are given and look for the root cause of issues. They can re-frame and explain a problem so that others understand it and are able to help them fix it.
+  </p>
+  <p class="govuk-body">
+  Visual communication is a core skill for designers. You will find it helpful to draw out diagrams to illustrate what you're trying to communicate. 
+  </p>
+  <p class="govuk-body">
+  You should consider the audience and intention for any piece of communication you need to create. You must be able to set the tone and level of fidelity to fit. Try not to over-design documentation and communications unless it will benefit users.
+  </p>
+  <p class="govuk-body">
+  Choose software so that your documents are inclusive and allow collaboration. Ultimately you should value collaborative working over sending out documents.
+  </p>
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../overview_menu.njk" %}
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Prototyping" %}
+{% block pageTitle %}
+ {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+ {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+ <h2 class="govuk-heading-m">Expectations at associate level</h2>
+ <ul class="govuk-list govuk-list--bullet">
+ <li>be able to sketch ideas. for example, working at a whiteboard with other designers or members of your team</li>
+ <li>be able to use a range of tools (sketch, powerpoint, word, draw.io, etc) to create prototypes and choose the right tool based on what’s being tested</li>
+ <li>refer to the DWP design patterns and contribute where possible</li>
+ <li>take a component first approach by using existing, standard components and patterns from the DWP and gov.uk design systems</li>
+ <li>be able to write basic html and css, with training if necessary</li>
+ <li>understand how to install, edit and run the gov.uk prototype kit</li>
+ <li>be able to use basic version control commands. to push, pull and merge changes in a prototype, with support</li>
+ <li>use heroku and github to publish prototypes securely, with support</li>
+ </ul> 
+
+ <h2 class="govuk-heading-m">Expectations at working level</h2>
+ <ul class="govuk-list govuk-list--bullet">
+ <li>regularly hold collaborative design workshops</li>
+ <li>be able to create more complex prototypes, when necessary</li>
+ <li>contribute to the DWP design patterns and DWP design system</li>
+ <li>have a high skill level using the gov.uk prototype kit and the associated software. be able to offer basic advice on its use</li>
+ <li>create provoke-a-types or designs that might be knowingly incomplete. use these to create discussion and drive out better solutions</li>
+ </ul> 
+
+ <h2 class="govuk-heading-m">Expectations at senior level</h2>
+ <ul class="govuk-list govuk-list--bullet">
+ <li>identify and share best practice for productivity</li>
+ <li>encourage sharing among teams</li>
+ </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+ {% include "../expectations_menu.njk" %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Communication skills" %}
+
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+  {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://www.ted.com/playlists/226/before_public_speaking">TED (Technology, Entertainment, and Design)</a></span>
+      <span>Playlist of TED videos on public speaking. Transcribed and captioned.</span>
+    </li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Books</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span>Visual Thinking: Empowering people and organisations through visual collaboration</span>
+      <span>By Williemien Brand and Pieter Koene (2017)</span>
+    </li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

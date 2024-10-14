@@ -1,0 +1,265 @@
+
+{% extends "dwp-layout.html" %}
+
+{% block pageTitle %}
+Nunjucks
+{% endblock %}
+
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="/prototype-kit-training" class="govuk-back-link">Prototype Kit Training home</a>
+      <h1 class="govuk-heading-xl">
+        Nunjucks
+      </h1>
+    </div>
+  </div>
+
+  <div class="flex-layout flex-layout--rev">
+
+    <div class="flex-layout__sidebar">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Contents
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-list--bullet govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="#about">
+                What is Nunjucks?
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#macros">
+                Macros
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#variables">
+                Variables
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#filters">
+                Filters
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#ifelse">
+                If / Else statements
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#templates">
+                Templates
+              </a>
+            </li>
+            <li>
+              <a class="govuk-link" href="#resources">
+                More resources
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+    <div class="flex-layout__main">
+      <h2 class="govuk-heading-m" id="about">What is Nunjucks?</h2>
+      <p>Nunjucks is the templating framework used by the GOV.UK Prototype Kit. Knowing a few Nunjucks basics will help you work more efficiently.</p>
+
+      <p>Nunjucks is installed as part of installing the Prototype Kit - there is nothing to install separately.</p>
+
+      <p>You can create Nunjuck files using the <code>.njk</code> extension, but you'll probably find that you only ever need to use Nunjucks within HTML files.</p>
+      
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="macros">Macros</h2>
+      <p>Macros are essentially shortcuts for generating components and patterns from the GOV.UK Design System. Instead of writing lots of HTML, a simple Nunjucks Macro will generate the exact HTML markup. For example:</p>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Macro syntax used in an HTML file</h3>
+        <pre class="snippet">{{ '{{ govukButton({
+  text: "Save and continue"
+}) }}' | escape }}</pre>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Generated HTML</h3>
+        <pre class="snippet">{{ '<button class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>' | escape }}</pre>
+      </div>
+
+      <p>Macros have the advantage of being 'update compatible': should a prototype be <a href="https://govuk-prototype-kit.herokuapp.com/docs/updating-the-kit" target="_blank">updated to a new version of the Prototype Kit</a> (or govuk-frontend), any macros used will automatically generate any updated HTML markup, avoiding manual updates. The downside of them is that occasionally you may want control over your exact markup to experiment with slightly different versions of GOV.UK componenents and patterns.</p>
+
+      <p>The <a href="https://design-system.service.gov.uk/" target="_blank">GOV.UK Design System</a> features all HTML and equivalent macros code snippets, so you can choose which to use. Note that when using the Prototype Kit, you don't need to use the import part of the syntax (eg. <code>{{ '{% from "govuk/components/button/macro.njk" import govukButton %}' | escape }}</code>) as the kit imports all relevant macros for you.</p>
+
+      <p>There is a useful tool available for Visual Studio Code and Atom that autopopulates Prototype Kit Nunjuck macros for you: <a href="https://github.com/daviddotto/govuk-design-system-snippets" target="_blank">GOV.UK Design System Snippets</a>.</p>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="variables">Variables</h2>
+      <p>You will be familiar with the notion of a variable if you've covered some of the <a href="javascript">JavaScript</a> resources. You can 'print out' variables within the HTML in the Prototype Kit using the following Nunjucks syntax.</p>
+      
+      
+      <div class="govuk-inset-text">
+        <p>For example, <code>serviceName</code> is a variable that is defined in every prototype (in <code>app/config.js</code>):</p>
+        <pre class="snippet">{{ "{{ serviceName }}" | escape }}</pre>
+
+        <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Variables from session data</h3>
+        <pre class="snippet  govuk-!-margin-bottom-2">{{ "{{ data['variable-name'] }}" | escape }}</pre>
+        <p>Session data is information that the Prototype Kit stores in the browser as a user interacts with it. The value of a text input, a checkbox being selected or a radio button being selected for example:</p>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">HTML input</h4>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '<input class="govuk-input" id="citizen-name" name="citizen-name" type="text" value="">' | escape }}</pre>
+        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">Print the value captured by this input in HTML</h4>
+        <pre class="snippet">{{ "{{ data['citizen-name'] }}" | escape }}</pre>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m" id="filters">Filters</h2>
+      <p>Filters let you 'do stuff' to your variables and other data, using the <code>|</code> symbol (known as 'pipe'). Here are a few examples:</p>
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Input</h3>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{{ "this is a test" | capitalize }}' | escape }}</pre>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">HTML Output</h3>
+        <pre class="snippet">This is a test</pre>
+
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Input</h3>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{{ "TEST" | lower }}' | escape }}</pre>
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">HTML Output</h3>
+        <pre class="snippet">test</pre>
+        
+        <pre class="snippet govuk-!-margin-bottom-3">{{ '{{ data[\'full-name\'] | default("John Smith") }}' | escape }}</pre>
+        <p>Returns <code>John Smith</code> if the <code>full-name</code> session variable is not defined.</p>
+
+      </div>
+      
+      <p><a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters">All inbuilt Nunjucks filters</a> are listed on the official Nunjucks documentation.</p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      
+      <h2 class="govuk-heading-m" id="ifelse">If / else statements</h2>
+      <p>Sometimes known as 'conditional statements', these let you do different things in the prototype depending on the value of something, for example:</p>
+
+      <div class="govuk-inset-text">
+        <pre class="snippet govuk-!-margin-bottom-6">{{ '{% if data[\'full-name\'] === \'Clark Kent\' %}
+  <h1>You are Superman</h1>
+{% else %}
+  <h1>You are not Superman</h1>
+{% endif %}' | escape }}</pre>
+
+        <p>The HTML will say 'You are Superman' in a heading tag if the relevant text input has been completed with the value 'Clark Kent', otherwise it will return 'You are not Superman'.</p>
+        
+        <p>You can also include an 'elseif' part to the statement:</p>
+
+        <pre class="snippet govuk-!-margin-bottom-6">{{ '{% if data[\'full-name\'] === \'Clark Kent\' %}
+  <h1>You are Superman</h1>
+{% elif data[\'full-name\'] === \'Bruce Wayne\'  %}
+  <h1>You are Batman</h1>
+{% else %}
+  <h1>You are not a superhero</h1>
+{% endif %}' | escape }}</pre>
+
+          <p><code>elif</code> is short for <code>elseif</code> - you can use either.</p>
+
+          <p>The <code>===</code> is called a comparison, see a <a href="https://mozilla.github.io/nunjucks/templating.html#comparisons" target="_blank">full list of comparisons</a> in the Nunjucks documentation.</p>
+
+          
+      </div>
+    
+      <p>You can also string different conditions together using <code>and</code> and <code>or</code></p>
+
+      <div class="govuk-inset-text">
+        <pre class="snippet">{{ '{% if data[\'full-name\'] === \'Clark Kent\' or  data[\'full-name\'] === \'Bruce Wayne\' %}
+  <h1>You are a superhero</h1>
+{% else %}
+  <h1>You are not a superhero</h1>
+{% endif %}' | escape }}</pre>
+
+        <pre class="snippet">{{ '{% if data[\'full-name\'] === \'Clark Kent\' and  data[\'other-name\'] === \'Bruce Wayne\' %}
+  <h1>You are the ultimate superhero</h1>
+{% else %}
+  <h1>You are not a superhero</h1>
+{% endif %}' | escape }}</pre>
+      </div>
+      
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="templates">Templates</h2>
+      
+      <h3 class="govuk-heading-s" id="extends">extends</h3>
+      <p>Most views (a view just means a page in the Prototype Kit) feature this line of code at the top of the HTML:</p>
+
+      <div class="govuk-inset-text">
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{% extends "layout.html" %}' | escape }}</pre>
+        <p>This simply means that the view uses a template called <code>layout.html</code> - which comes with the Prototype Kit. That template can be copied and modified if necessary. The kit also comes with a <code>layout_unbranded.html</code> template.</p>
+      </div>
+
+      <h3 class="govuk-heading-s" id="blocks">block</h3>
+      <p>Blocks lets you place content in specific parts of a template. So <code>layout.html</code> provides some blocks, some with default content. This content can then be over written in any view that uses that template.</p>
+        
+      <div class="govuk-inset-text">
+        <p>To override the title of a page, you simply need to populate the <code>pageTitle</code> block in the HTML file of the view you are working in:</p>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{% block pageTitle %}
+  Your page title - might be your {{ serviveName }} variable
+{% endblock %}' | escape }}</pre>
+        <p>Some other useful blocks available in the Prototype Kit:</p>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{% block beforeContent %}
+  Any content that sits below the header but before the main content, such as language toggles and phase banners.
+{% endblock %}' | escape }}</pre>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{% block content %}
+  The main content of your prototype
+{% endblock %}' | escape }}</pre>
+      </div>
+
+      <h3 class="govuk-heading-s" id="include">include</h3>
+
+      <p>This Nunjuck feature lets you include a template within another page. This is particularly useful if you want to include a small section of content on more than one page.</p>
+
+      <div class="govuk-inset-text">
+        <p>If you were to feature some contact details on different pages in your prototype for example, you would first create a regular HTML file (for example, <code>contact-details.html</code>) with the desired content and save it in your <code>app/views/includes</code> folder. Whenever you want to feature that content in a page, simply include the following:</p>
+        <pre class="snippet govuk-!-margin-bottom-4">{{ '{% include "includes/contact-details.html" %}' | escape }}</pre>
+      </div>
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m" id="resources">More resources</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="https://www.smashingmagazine.com/2018/03/static-site-with-nunjucks/" target="_blank">
+            Smashing Magazine - Building A Static Site With Components Using Nunjucks
+          </a>
+        </li>
+        <li>
+          <a href="https://mozilla.github.io/nunjucks/templating.html" target="_blank">
+            Nunjucks - Official documentation
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/daviddotto/govuk-design-system-snippets" target="_blank">
+            David Todd - GOV.UK Design System Snippets
+          </a>
+          <div>A very useful tool for Visual Studio Code or Atom that autopopulates Prototype Kit Nunjuck macros.</div>
+          <div><img src="https://github.com/daviddotto/govuk-design-system-snippets/raw/main/demo.gif" alt="GOV.UK Design System Snippets demo"></div>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <nav class="page-nav">
+        <div><a href="express" class="page-nav__next">Next: <strong>Express</strong></a></div>
+        <div><a href="git" class="page-nav__prev">Previous: <strong> Git</strong></a></div>
+      </nav>
+ 
+    </div>
+
+    
+  </div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "Evidence and context-based design" %}
+{% block pageTitle %}
+  {{pagename}} expectations
+{% endblock %}
+
+{% block hero_content %} 
+  {% include "../expectations_header.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+
+  <h2 class="govuk-heading-m">Expectations at associate level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>work closely with the user researcher and content designer on your team</li>
+    {# <li>share your work in progress with other interaction designers, in both one to one and community meetings</li> #}
+    <li>document your work. link design decisions back to research and evidence</li>
+    <li>focus on outcomes, rather than solutions and activities</li>
+    <li>consider many ideas to solve a problem but be clear about which to test</li>
+    <li>understand how to work using an iterative cycle (discover, build, test and iterate)</li>
+    <li>learn to see the whole journey for a user, including the non-digital parts</li>
+    <li>be familiar with the service standards and the guidance in the gov.uk service manual</li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at working level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>encourage other members of the team to be involved in the design and research process</li> 
+    <li>help the team to create hypotheses and identify assumptions</li> 
+    <li>encourage the team to test different solutions</li> 
+    <li>design for the non-digital parts of the journey</li> 
+    <li>suggest how services should work for those with low digital skills and limited access to technology</li> 
+    <li>apply the government service design standards to your work. you should help the other people in your team understand and follow them</li> 
+  </ul> 
+
+  <h2 class="govuk-heading-m">Expectations at senior level</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>ensure teams use an iterative cycle and follow an evidence driven design approach</li> 
+    <li>ensure teams understand the importance to test many ideas</li> 
+    <li>encourage teams to take a joined-up approach to helping those with low digital skills or limited access to technology</li>   
+    <li>act as service standard ambassadors. help teams to meet the standards and offer advice across all points. promote the benefits of the service design standards to senior stakeholders</li> 
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../expectations_menu.njk" %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "skills-layout.html" %}
+
+{% set pagename = "User focus" %}
+{% block pageTitle %}
+  {{pagename}} resources
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Learn more about {{pagename | lower}}</h1>
+   {% include "../resource_statement.njk" %}
+{% endblock %}
+
+{% block skillcontent %}
+  <h2 class="govuk-heading-m">Books</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span>Design for the Real World</span>
+      <span>By Victor Papanek (1971)</span>
+    </li>
+    <li>
+      <span>The Design of Everyday Things</span>
+      <span>By Don Norman (1988)</span>
+    </li>
+  </ul> 
+
+  <h2 class="govuk-heading-m">Blogs, articles and online content</h2>
+  <ul class="govuk-list govuk-list--bullet resource govuk-list--spaced">
+    <li>
+      <span><a href="https://www.thisishcd.com/">This is HCD (Human Centered design)</a></span>
+      <span>Regular podcast on a range of user centered design topics</span>
+    </li>
+  </ul> 
+
+{% endblock %}
+
+{% block related_content %} 
+  {% include "../resources_menu.njk" %}
+{% endblock %}

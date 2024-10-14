@@ -1,0 +1,68 @@
+{% extends "dwp-layout-big-bar.html" %}
+
+{% block page_title %}
+  Accessibility - DWP Digital User Centred Design Manual
+{% endblock %}
+
+{% block hero_content %} 
+  <h1 class="govuk-heading-xl no-margin">Accessibility</h1>
+  <p class="big-bar__description">Make DWP services accessible for everyone.</p>
+{% endblock %}
+
+
+{% block content %}
+  <main id="content" role="main">
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds">
+
+        <p class="govuk-body">We don’t always know who will need to use our services, so it’s important that they are accessible for everyone. This means making services that are easy to use, easy to find and take everyone’s needs into account.</p>
+        <p class="govuk-body">For us, accessibility isn’t just passing an audit. It’s about making sure the language is simple, that the interactions are clear, and that the whole service is meeting the needs of the people that use it.</p>
+
+        <p class="govuk-body">We put accessibility at the forefront of everything we do. We design, research and build with it in mind from day 1. We go out and meet with people whose needs might be different to our own and we test it in context. This is on their own devices and in an environment where they feel comfortable.</p>
+
+        <p class="govuk-body">We talk to people. We listen and respond to feedback. We iterate, and we make things better for everyone.</p>
+
+        <h3 class="govuk-heading-m">Designers must</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use existing patterns and components that are proven to be accessible. If we design anything new, we make sure to use sufficient contrasts from the GOVUK colour palette</li>
+          <li>make sure our content is clear and concise</li>
+          <li>never provide content that relies solely on sensory characteristics, such as sound, images or colour</li>
+          <li>keep visual stimulus to a minimum, not overloading senses with unnecessary animations or information</li>
+          <li>design simple and well thought out interactions to make services intuitive and help users understand what to do</li>
+          <li>provide the information in an alternative format, if we cannot make a design accessible</li>
+          <li>design interactions and layouts that feel consistent with the rest of DWP and Government</li>
+          <li>include users with assistive technology in our research and our design iterations</li>
+        </ul>
+
+        <h3 class="govuk-heading-m">Developers must</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use styles and components from the GOVUK Design System</li>
+          <li>use semantic HTML code</li>
+          <li>code layouts in a way that makes use of proper HTML landmarks, so users can easily navigate each page</li>
+          <li>ensure that users can navigate a service without the use of a mouse</li>
+          <li>use alternative text for images, so they can be understood even if they can’t be seen</li>
+          <li>ensure Javascript is applied as a progressive enhancement, so that we don’t exclude anybody and don’t provide unnecessary cognitive load</li>
+          <li>use ARIA attributes for dynamic components when applicable</li>
+          <li>provide skip-links to allow keyboard users to skip straight to the main content</li>
+          <li>make links descriptive so they can be understood in isolation rather than ‘Read more’ or ‘Click here’</li>
+          <li>hide decorative elements from screen readers if they provide no informative value</li>
+          <li>provide information in an alternative format if something is difficult to make accessible</li>
+        </ul>
+
+        <h3 class="govuk-heading-m">The whole team must</h3>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>understand what is needed to make a service accessible and will conduct ongoing research throughout each phase</li>
+          <li>allocate enough time to make things accessible and include it in our definition of done</li>
+          <li>talk about the accessibility work we are doing to raise awareness with other teams</li>
+          <li>share accessibility research if we find problems with common components or patterns</li>
+          <li>be advocates for accessibility, always putting the user first and challenging people that may wish to de-prioritise the work</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </main>
+{% endblock %}

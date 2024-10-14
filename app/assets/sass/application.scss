@@ -1,0 +1,446 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+
+
+// Patterns that aren't in Frontend
+@import "patterns/related-items";
+@import 'node_modules/dfe-frontend/packages/dfefrontend';
+
+// Variables
+$site-width:  1080px;
+$dwp-primary-color: govuk-colour("turquoise");
+
+// Components that aren't in Frontend
+@import "components/big-bar";
+@import "components/cookie-banner";
+@import "components/dwp-header";
+@import "components/flex-layout";
+@import "components/page-nav";
+
+
+// Utility classes
+.no-margin { padding-bottom: 0; margin-bottom: 0;}
+.no-margin-top { margin-top: 0; }
+.margin-top { margin-top: 40px; }
+.margin-bottom { margin-bottom: 20px; }
+.text-centre { text-align: center; }
+.fl { float: left; }
+.fr { float: right; }
+.hidden {
+  display: none !important;
+}
+.bold {
+  font-weight: bold;
+}
+
+// Design Manual styles
+#logo { display: none; }
+img {
+  max-width: 100%;
+}
+
+.sticker-list { margin-top: 40px; }
+.image { width: 100%; border-radius: 50%; }
+.image-static { width: 100%; border-radius: 50%; }
+.image-static-square { width: 100%; }
+.poster { width: 100%; }
+
+.poster:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  -moz-box-shadow:    0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  box-shadow:         0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  cursor: pointer;
+}
+
+.image:hover {
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  -moz-box-shadow:    0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  box-shadow:         0px 3px 0px 0px rgba(49, 50, 50, 0.29);
+  cursor: pointer;
+}
+
+#proposition-links {
+  float: right;
+
+  li {
+      margin-top: 5px;
+
+      a {
+      cursor: pointer;
+      font-weight: normal;
+      }
+  }
+}
+
+.content-block {
+  border-bottom: 4px solid #cecece;
+}
+
+.column-block {
+  height: auto;
+  border-bottom: 4px solid #cecece;
+
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table--striped {
+  border: 1px solid #bfc1c3;
+  font-size: 16px;
+  padding-left: 4px;
+
+  td {
+    padding-left: 15px;
+  }
+}
+
+.int { padding-left: 15px; }
+
+thead { background: #ececec; }
+
+//skills content pages
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
+.resource {
+  li {
+    @include clearfix;
+    span {
+      width: 100%;
+      float: left;
+    }
+  }
+}
+
+//dataplan
+#data-master {
+  width: auto;
+  min-width: 2176px;
+  background-color: #DADADA;
+  margin: 0;
+  padding: 20px;
+}
+.plancontainer {
+  background: #f5f5f5;
+  p, li {
+    font-size: 14px;
+  }
+  p {
+    margin: 0 0 5px;
+    &.govuk-body-l {
+      font-size: 100%;
+    }
+    
+  }
+  @include clearfix;
+  .planservicecontainer {
+    @include clearfix;
+    border: 1px solid black;
+    display: flex;
+    padding: 20px;
+  }
+
+  .plan-time-header {
+    padding : 10px 0 0 10px;
+    background: #b3b3b3;
+    .govuk-heading-s {
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+  }
+  .plantimeframe {
+    @include clearfix;
+    width: 520px;
+    margin-left: 20px;
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+  .plan-service-title {
+    width: 100px;
+  }
+  .planproductcardcontainer {
+    @include clearfix;
+    width: 232px;
+    float: left;
+    display: block;
+    padding: 5px;
+    &.valuemed {
+      .planproductcard {
+        background: #7ddbef;
+      }
+    }
+    &.valuelow {
+      .planproductcard {
+        background: #f6cc5e;
+      }
+    }
+    &.valuehigh {
+      .planproductcard {
+        background: #e9679f;
+      }
+    }
+  }
+  .planproductcard {
+    @include clearfix;
+    background: #fcfd8f;
+    &.theme-fraud {
+      background: #c090f2;
+    }
+    &.theme-process {
+      background: #f6cc5e;
+    }
+    &.theme-understanding {
+      background: #fcfd8f;
+    }
+    &.theme-channels {
+      background: #e9679f;
+    }
+    &.theme-holistic {
+      background: #7ddbef;
+    }
+    height: auto;
+    padding: 8px;
+    ul {
+      width: 40%;
+      float: left;
+      margin: 5px 0 0 0;
+    }
+  }
+}
+
+.data-component-container {
+  clear: both;
+  width: 100%;
+  ul {
+    width: 100%!important;
+  }
+  li {
+    &:nth-child(1), &:nth-child(4) {
+      float :right;
+    }
+    font-size: 65%;
+    background: #b5ec6f;
+    width: 42.5%;
+    float :left;
+    padding: 5px;
+    border: 1px solid white;
+  }
+  &.dependency-container {
+    background: lightblue;
+  }
+}
+
+.dependency-row p {
+  &:nth-child(2), &:nth-child(4) {
+    float: right;
+  }
+  background: #b5ec6f;
+  display: block;
+  width: 45%;
+  float :left;
+  padding: 2%;
+  border: 1px solid white;
+}
+
+.form-filter {
+  width: 100%;
+}
+
+.data-filter {
+  // float: left;
+  width: 33%;
+}
+
+
+
+// Task list tweaks for Prototype Kit training index page
+.app-task-list__section {
+  margin: 0;
+  line-height: normal;
+}
+
+.app-task-list__item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+li {
+  clear: both;
+}
+
+@media only screen and (min-width: 640px) {
+  .app-task-list__description {
+    padding-left: 30px;
+  }
+}
+
+// Code / snippets styles for Prototype Kit training
+code {
+  color: #d13118;
+  background-color: #f3f2f1;
+  padding: 0 5px;
+}
+
+.snippet {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 10px 15px;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.snippet--terminal {
+  background-color: #111;
+  color: #FFF;
+  border: 0;
+}
+
+// How things fit together diagram for Prototype Kit training
+.how-things-fit__row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.how-things-fit__img {
+  width: 20%;
+  text-align: center;
+  img {
+    width: 60%;
+    max-width: 100%;
+  }
+}
+
+.how-things-fit__text {
+  width: 50%;
+  p:last-child {
+    margin:  0;
+  }
+}
+
+@media (max-width: 40.0625em) {
+  .how-things-fit__img {
+    width: 30%;
+  }
+  .how-things-fit__text {
+    width: 70%;
+  }
+}
+
+
+.dfe-grid-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+
+  .dfe-grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+  }
+
+
+.dfe-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $color_dfe-white;
+  border: 1px solid $color_dfe-grey-2;
+  max-width: 400px;
+
+}
+
+
+  .dfe-card {
+      max-width: 100%;
+  }
+
+
+.dfe-card>picture,
+.dfe-card>picture>img {
+  max-width: 100%;
+}
+
+.dfe-card-container {
+  padding: dfe-spacing(4);
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  // Last element push to the bottom
+  :last-child {
+      margin-top: auto;
+  }
+
+  // except when it's just a linkable header and p - don't margin:auto.
+  h2+p:last-child,
+  h3+p:last-child {
+      margin-top: 0px;
+  }
+
+}
+
+.dfe-card:hover,
+.dfe-card:focus-within {
+  background-color: $color_dfe-blue;
+}
+
+.dfe-card:hover a,
+.dfe-card:focus-within a,
+.dfe-card:hover p,
+.dfe-card:focus-within p,
+.dfe-card:hover .govuk-heading-m,
+.dfe-card:focus-within .govuk-heading-m {
+  color: $color_dfe-white;
+}
+
+.dfe-card:focus-within {
+  outline: 3px solid $color_dfe-yellow;
+}
+
+.dfe-card-container .dfe-card-link--retake:focus,
+.dfe-card-container .dfe-card-link--header:focus {
+  color: $color_dfe-black;
+}
+
+.dfe-card-link--retake {
+  position: relative;
+  z-index: 2;
+}
+
+.dfe-card-link--header {
+  text-decoration: none;
+  color: #28a197;
+}
+
+.dfe-card-link--header:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
