@@ -12,64 +12,76 @@
 
 {% block content %}
 
- <main id="content" role="main">
-
-  <div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-one-third">
-    <h2 class="heading-medium">
-      <a href="interaction-design/">Interaction and Service Design</a>
-    </h2>
-    <p class="govuk-body">How we design end-to-end services, user journeys and individual interactions.</p>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <h2 class="heading-medium">
-    <a href="content-design/">Content Design</a>
-    </h2>
-    <p class="govuk-body">How we design content for our products and services.</p>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <h2 class="heading-medium">
-      <a href="resources">Resources</a>
-    </h2>
-    <p class="govuk-body">Templates, blogs, and other useful information and resources.</p>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-one-third">
-    <h2 class="heading-small">
-      <a href="https://design-system.dwp.gov.uk/index">The DWP Design System</a>
-    </h2>
-    <p class="govuk-body">Use this design system to make your service consistent with DWP.</p>
-  </div>
-
-  <div class="govuk-grid-column-one-third">
-    <h2 class="heading-medium">
-    <a href="https://accessibility-manual.dwp.gov.uk">The DWP Accessibility Manual</a>
-    </h2>
-    <p class="govuk-body">Guidance and best practice for building accessible services.</p>
-  </div>
-
-</div>
-
-<div class="govuk-grid-row">
-
-  <div class="govuk-grid-column-two-thirds">
-
-  <p class="govuk-body">
-    The content in this manual follows and supports the <a href="https://www.gov.uk/service-manual">GDS service manual</a>.
-  </p>
-
-</div>
-</div>
-
-
-
- </main>
-
+<main id="content" role="main">
+  {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}  {{ card({
+    cards: [
+      {
+        "imageCard": false,
+        "imagePath": "/images/sample-image.jpg",
+        "altText": "Sample Image",
+        "headingLevel": "3",
+        "linkCard": true,
+        "link": "interaction-design/",
+        "openInNewTab": false,
+        "heading": "Interaction Design",
+        "meta": "How we design how users interact with DWP services."
+      },
+      {
+        "imageCard": false,
+        "imagePath": "/images/sample-image.jpg",
+        "altText": "Sample Image",
+        "headingLevel": "3",
+        "linkCard": true,
+        "link": "service-design/",
+        "openInNewTab": false,
+        "heading": "Service Design",
+        "meta": "How we design end-to-end services and user journeys."
+      },
+      {
+        "imageCard": false,
+        "imagePath": "/images/sample-image.jpg",
+        "altText": "Sample Image",
+        "headingLevel": "3",
+        "linkCard": true,
+        "link": "content-design/",
+        "openInNewTab": false,
+        "heading": "Content Design",
+        "meta": "How we design content for our products and services."
+      },
+      {
+        "imageCard": false,
+        "imagePath": "/images/sample-image.jpg",
+        "altText": "Sample Image",
+        "headingLevel": "3",
+        "linkCard": true,
+        "link": "resources",
+        "openInNewTab": false,
+        "heading": "Resources",
+        "meta": "Resources for design services."
+      }, 
+      {
+        "imageCard": false,
+        "imagePath": "",
+        "altText": "",
+        "headingLevel": "2",
+        "linkCard": true,
+        "link": "https://design-system.dwp.gov.uk/index",
+        "openInNewTab": false,
+        "heading": "The DWP Design System",
+        "meta": "Use this design system to make your service consistent with DWP."
+      },
+      {
+        "imageCard": false,
+        "imagePath": "",
+        "altText": "",
+        "headingLevel": "2",
+        "linkCard": true,
+        "link": "https://accessibility-manual.dwp.gov.uk",
+        "openInNewTab": false,
+        "heading": "The DWP Accessibility Manual",
+        "meta": "Guidance and best practice for building accessible services."
+      }
+    ]
+  }) }}
+</main>
 {% endblock %}

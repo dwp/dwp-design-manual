@@ -10,7 +10,6 @@ $govuk-assets-path: '/govuk/assets/';
 // Patterns that aren't in Frontend
 @import "patterns/related-items";
 @import 'node_modules/dfe-frontend/packages/dfefrontend';
-
 // Variables
 $site-width:  1080px;
 $dwp-primary-color: govuk-colour("turquoise");
@@ -21,7 +20,7 @@ $dwp-primary-color: govuk-colour("turquoise");
 @import "components/dwp-header";
 @import "components/flex-layout";
 @import "components/page-nav";
-
+.govuk-width-container { @include govuk-width-container; }
 
 // Utility classes
 .no-margin { padding-bottom: 0; margin-bottom: 0;}
@@ -444,3 +443,4 @@ code {
   right: 0;
   bottom: 0;
 }
+
