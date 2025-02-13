@@ -28,9 +28,15 @@
 {% from "govuk/components/tag/macro.njk"              import govukTag %}
 {% from "govuk/components/textarea/macro.njk"         import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
+  
+  {# For guidance, see: https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images #}
+  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 {% endblock %}
 
 {% block pageTitle %}
@@ -54,18 +60,23 @@
   {% block footer %}
     {{ govukFooter({
       meta: {
-        items: [
-
-        ]
+        items: []
       }
     }) }}
   {% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
+  {# Move JavaScript to end of body and ensure correct order #}
+  <script src="/govuk/all.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      if (window.GOVUKFrontend) {
+        window.GOVUKFrontend.initAll();
+      }
+    });
+  </script>
+  <script src="/public/javascripts/application.js"></script>
+  <script src="/public/javascripts/auto-store-data.js"></script>
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

@@ -1,57 +1,187 @@
 {% extends "dwp-layout-big-bar.html" %}
-{% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
 
 {% block page_title %}
-  Guiding Principles - DWP Digital User Centred Design Manual
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
 {% endblock %}
 
 {% block hero_content %}
   <h1 class="govuk-heading-xl no-margin">Interaction Design in DWP</h1>
-  <p class="big-bar__description">
-Interaction Designers create whole user journeys and individual interactions, making sure products and services are accessible and can be used by everyone who needs them.
-</p>
 {% endblock %}
 
 {% block content %}
 <main id="content" role="main">
-  {{ card({
-    cards: [
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "../design-patterns",
-        "openInNewTab": false,
-        "heading": "Design patterns and components",
-        "meta": "How we use existing design, research and data to design our products and services."
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <nav class="dwp-side-navigation" aria-label="Side" role="navigation">
+        <ul class="dwp-side-navigation__list">
+          <li class="dwp-side-navigation__item">
+            <a id="what-interaction-designers-do" href="#what-interaction-designers-do" class="dwp-side-navigation__link" data-section="what-interaction-designers-do">
+              What interaction designers do
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="expectations" href="#expectations" class="dwp-side-navigation__link" data-section="expectations">
+              Expectations for interaction designers
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="design-clinics" href="#design-clinics" class="dwp-side-navigation__link" data-section="design-clinics">
+              Design clinics
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="prototyping" href="#prototyping" class="dwp-side-navigation__link" data-section="prototyping">
+              Prototyping
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="tools" href="#tools" class="dwp-side-navigation__link" data-section="tools">
+              Tools
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="community" href="#community" class="dwp-side-navigation__link" data-section="community">
+              Community
+            </a>
+          </li>
+   
+
+          <li class="dwp-side-navigation__item">
+                <a id="definition-of-done" href="#definition-of-done" class="dwp-side-navigation__link" data-section="definition-of-done">
+                  Definition of done
+                </a>
+              </li>
+              <li class="dwp-side-navigation__item">
+                <a id="measures-of-success" href="#measures-of-success" class="dwp-side-navigation__link" data-section="measures-of-success">
+                  Measures of success
+                </a>
+              </li>
+              <li class="dwp-side-navigation__item">
+                <a id="documenting-design-debt" href="#documenting-design-debt" class="dwp-side-navigation__link" data-section="documenting-design-debt">
+                  Documenting design debt
+                </a>
+              </li>
+              <li class="dwp-side-navigation__item">
+                <a id="giving-receiving-feedback" href="#giving-receiving-feedback" class="dwp-side-navigation__link" data-section="giving-receiving-feedback">
+                  Giving and receiving feedback
+                </a>
+              </li>
+              <li class="dwp-side-navigation__item">
+                <a id="documenting-design-decisions" href="#documenting-design-decisions" class="dwp-side-navigation__link" data-section="documenting-design-decisions">
+                  Documenting design decisions
+                </a>
+              </li>
+              <li class="dwp-side-navigation__item">
+                <a id="working-with-performance-analysts" href="#working-with-performance-analysts" class="dwp-side-navigation__link" data-section="working-with-performance-analysts">
+                  Working with performance analysts
+                </a>
+              </li>
+
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <div id="what-interaction-designers-do" class="content-section">
+        {% include "./content/what-interaction-designers-do.html" %}
+      </div>
+      <div id="community" class="content-section" hidden>
+        {% include "./content/community.html" %}
+      </div>
+
+      <div id="expectations" class="content-section" hidden>
+        {% include "./content/expectations.html" %}
+      </div>
+
+      <div id="design-clinics" class="content-section" hidden>
+        {% include "./content/design-clinics.html" %}
+      </div>
+
+      <div id="prototyping" class="content-section" hidden>
+        {% include "./content/prototyping.html" %}
+      </div>
+
+      <div id="tools" class="content-section" hidden>
+        {% include "./content/tools.html" %}
+      </div>
+
+ 
+
+      <div id="definition-of-done" class="content-section" hidden>
+        {% include "./content/definition-of-done.html" %}
+      </div>
+
+      <div id="measures-of-success" class="content-section" hidden>
+        {% include "./content/measures-of-success.html" %}
+      </div>
+
+      <div id="documenting-design-debt" class="content-section" hidden>
+        {% include "./content/documenting-design-debt.html" %}
+      </div>
+
+      <div id="giving-receiving-feedback" class="content-section" hidden>
+        {% include "./content/giving-receiving-feedback.html" %}
+      </div>
+
+      <div id="documenting-design-decisions" class="content-section" hidden>
+        {% include "./content/documenting-design-decisions.html" %}
+      </div>
+
+      <div id="working-with-performance-analysts" class="content-section" hidden>
+        {% include "./content/working-with-performance-analysts.html" %}
+      </div>
       
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "expectations",
-        "openInNewTab": false,
-        "heading": "Expectations for designers",
-        "meta": "What we expect from interaction designers at DWP."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "../skills",
-        "openInNewTab": false,
-        "heading": "Interaction design skills",
-        "meta": " The skills you need to be an interaction designer at DWP."
       
-      }
-    ]
-  }) }}
+      
+      
+    </div>
+  </div>
 </main>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Hide all sections except the selected one
+    const selectedItem = document.querySelector('[href="' + window.location.hash + '"]') || 
+                        document.querySelector('.dwp-side-navigation__link');
+    const selectedId = selectedItem ? selectedItem.getAttribute('href').substring(1) : 'what-interaction-designers-do';
+    
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.hidden = section.id !== selectedId;
+    });
+
+    // Add click handlers to all navigation links
+    document.querySelectorAll('.dwp-side-navigation__link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.hidden = true;
+            });
+            
+            // Show clicked section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.hidden = false;
+                window.location.hash = targetId; // Update URL
+            }
+        });
+    });
+
+    // Handle back/forward navigation
+    window.addEventListener('hashchange', function() {
+        const newId = window.location.hash.substring(1);
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.hidden = section.id !== newId;
+        });
+    });
+});
+
+</script>
 {% endblock %}

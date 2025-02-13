@@ -1,44 +1,113 @@
 {% extends "dwp-layout-big-bar.html" %}
-{% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
 
 {% block page_title %}
-  Guiding Principles - DWP Digital User Centred Design Manual
+  Service Design in DWP - DWP Digital User Centred Design Manual
 {% endblock %}
 
-{% block hero_content %} 
-  <h1 class="govuk-heading-xl no-margin">Service Design in DWP</h1>
-  <p class="big-bar__description">Service designers design the end-to-end journey of a service. This helps a user complete their goal and government deliver a policy intent. In this role, your work may involve the creation of, or change to, transactions, products and content across both digital and offline channels provided by different parts of government.</p>
+{% block hero_content %}
+  <h1 class="govuk-heading-xl no-margin">Interaction Design in DWP</h1>
 {% endblock %}
-
 
 {% block content %}
 <main id="content" role="main">
-  {{ card({
-    cards: [
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "../design-patterns",
-        "openInNewTab": false,
-        "heading": "Design patterns and components",
-        "meta": "How we use existing design, research and data to design our products and services."
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <nav class="dwp-side-navigation" aria-label="Side" role="navigation">
+        <ul class="dwp-side-navigation__list">
+          <li class="dwp-side-navigation__item">
+            <a id="what-service-designers-do" href="#what-service-designers-do" class="dwp-side-navigation__link" data-section="what-service-designers-do">
+              What service designers do
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="expectations" href="#expectations" class="dwp-side-navigation__link" data-section="expectations">
+              Expectations for service designers
+            </a>
+          </li>
       
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "expectations",
-        "openInNewTab": false,
-        "heading": "Expectations for designers",
-        "meta": "What we expect from interaction designers at DWP."
-      }
-    ]
-  }) }}
+       
+          <li class="dwp-side-navigation__item">
+            <a id="tools" href="#tools" class="dwp-side-navigation__link" data-section="tools">
+              Tools
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="community" href="#community" class="dwp-side-navigation__link" data-section="community">
+              Community
+            </a>
+          </li>
+   
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+      <div id="what-service-designers-do" class="content-section">
+        {% include "./content/what-service-designers-do.html" %}
+      </div>
+      <div id="community" class="content-section" hidden>
+        {% include "./content/community.html" %}
+      </div>
+
+      <div id="expectations" class="content-section" hidden>
+        {% include "./content/expectations.html" %}
+      </div>
+
+      <div id="tools" class="content-section" hidden>
+        {% include "./content/tools.html" %}
+      </div>
+      
+      
+      
+      
+    </div>
+  </div>
 </main>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Hide all sections except the selected one
+    const selectedItem = document.querySelector('[href="' + window.location.hash + '"]') || 
+                        document.querySelector('.dwp-side-navigation__link');
+    const selectedId = selectedItem ? selectedItem.getAttribute('href').substring(1) : 'what-interaction-designers-do';
+    
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.hidden = section.id !== selectedId;
+    });
+
+    // Add click handlers to all navigation links
+    document.querySelectorAll('.dwp-side-navigation__link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.hidden = true;
+            });
+            
+            // Show clicked section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.hidden = false;
+                window.location.hash = targetId; // Update URL
+            }
+        });
+    });
+
+    // Handle back/forward navigation
+    window.addEventListener('hashchange', function() {
+        const newId = window.location.hash.substring(1);
+        document.querySelectorAll('.content-section').forEach(section => {
+            section.hidden = section.id !== newId;
+        });
+    });
+});
+
+</script>
 {% endblock %}
