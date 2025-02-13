@@ -1,25 +1,16 @@
 {% extends "layout.html" %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block header %} 
   {% include "includes/cookie-banner.html" %}
   {% include "includes/dwp/dwp-header.html" %}
   {% include "includes/dwp/service-navigation.html" %}
 
-  {% if not isIndexPage %}
-    <div class="govuk-width-container">
-      {{ govukBackLink({
-        text: "Back",
-        href: "javascript:window.history.back()",
-        classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-4"
-      }) }}
-    </div>
-  {% endif %}
+
 
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-      {% block hero_content %} 
+      {% block before_content %} 
       {% endblock %}
       </div>
     </div>

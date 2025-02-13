@@ -1,1 +1,1 @@
-{"useAuth":false,"serviceName":"Service name goes here"}
+{"useAuth":false,"serviceName":"Service name goes here","paths":{"assets":"/assets","scripts":["/javascripts/govuk-frontend.min.js","/javascripts/dwp-frontend.min.js","/javascripts/application.js"]}}

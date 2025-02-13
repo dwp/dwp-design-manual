@@ -1,14 +1,15 @@
-{% extends "dwp-layout-big-bar.html" %}
+{% extends "index-dwp-layout-big-bar.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
-{% block hero_content %}
-  <h1 class="govuk-heading-xl no-margin">Design services at the Department for Work and Pensions (DWP).</h1>
-  <p class="big-bar__description">We follow the <a href="https://www.gov.uk/guidance/government-design-principles">Government Design Principles</a> to deliver consistent, usable services that put people first.</p>
 
-  <p class="big-bar__description">
-    <!-- <a href="principles">See our user centred design principles</a> -->
-  </p>
-
+{% block page_title %}
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
 {% endblock %}
+
+{% block before_content %}
+  <h1 class="govuk-heading-xl no-margin">User Centred Design in the Department for Work and Pensions (DWP)</h1>
+{% endblock %}
+
 
 {% block content %}
 
@@ -57,7 +58,7 @@
         "link": "resources",
         "openInNewTab": false,
         "heading": "Resources",
-        "meta": "Resources for design services."
+        "meta": "Resources for designing services."
       }, 
       {
         "imageCard": false,
