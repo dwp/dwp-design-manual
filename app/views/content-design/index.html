@@ -1,5 +1,5 @@
 {% extends "dwp-layout-big-bar.html" %}
-{% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
 {% block page_title %}
   Content Design in DWP - DWP Digital User Centred Design Manual
@@ -7,106 +7,145 @@
 
 {% block hero_content %}
   <h1 class="govuk-heading-xl no-margin">Content Design in DWP</h1>
-  <p class="big-bar__description">We create clear content which helps users to find, understand and complete their goal with the minimum of time, stress and effort.</p>
 {% endblock %}
-
-
 
 {% block content %}
 <main id="content" role="main">
-  {{ card({
-    cards: [
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "what-content-designers-do",
-        "openInNewTab": false,
-        "heading": "What content designers do in DWP",
-        "meta": "Our mission, the problem we're here to solve and how we will do it."
-      
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "expectations",
-        "openInNewTab": false,
-        "heading": "Expectations for content designers in DWP",
-        "meta": "How we're expected to work at each service development phase, and who we work with."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "../design-patterns",
-        "openInNewTab": false,
-        "heading": "Design patterns and components",
-        "meta": "How we use existing design, research and data to design our products and services."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "style-guides-and-content-patterns",
-        "openInNewTab": false,
-        "heading": "Style guides and content patterns",
-        "meta": "The content patterns, style guides and other style resources we use as content designers in DWP"
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "content-design-community",
-        "openInNewTab": false,
-        "heading": "Content design community",
-        "meta": "DWP content design communities and communication channels."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "reviewing-our-work",
-        "openInNewTab": false,
-        "heading": "Reviewing our work",
-        "meta": "Tools and advice on how to get your work reviewed and how to review other people's work."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "designing-notifications",
-        "openInNewTab": false,
-        "heading": "Designing notifications",
-        "meta": "Guidance on how to design notifications effectively."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "measuring-success",
-        "openInNewTab": false,
-        "heading": "Measuring success",
-        "meta": "Useful ways to measure the success of your content."
-      
-      }
-    ]
-  }) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <nav class="dwp-side-navigation">
+        <ul class="dwp-side-navigation__list">
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#what-content-designers-do" data-section="what-content-designers-do">What content designers do</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#expectations" data-section="expectations">Expectations for content designers</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#design-patterns" data-section="design-patterns">Design patterns and components</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#style-guides" data-section="style-guides">Style guides and content patterns</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#community" data-section="community">Content design community</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#reviewing" data-section="reviewing">Reviewing our work</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#notifications" data-section="notifications">Designing notifications</a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a class="dwp-side-navigation__link" href="#measuring" data-section="measuring">Measuring success</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <div id="what-content-designers-do" class="content-section">
+        {% include "./content/what-content-designers-do.html" %}
+      </div>
+
+      <div id="expectations" class="content-section" hidden>
+        {% include "./content/expectations.html" %}
+      </div>
+
+      <div id="design-patterns" class="content-section" hidden>
+        {% include "./content/design-patterns.html" %}
+      </div>
+
+      <div id="style-guides" class="content-section" hidden>
+        {% include "./content/style-guides.html" %}
+      </div>
+
+      <div id="community" class="content-section" hidden>
+        {% include "./content/community.html" %}
+      </div>
+
+      <div id="reviewing" class="content-section" hidden>
+        {% include "./content/reviewing.html" %}
+      </div>
+
+      <div id="notifications" class="content-section" hidden>
+        {% include "./content/notifications.html" %}
+      </div>
+
+      <div id="measuring" class="content-section" hidden>
+        {% include "./content/measuring.html" %}
+      </div>
+    </div>
+  </div>
 </main>
+
+<style>
+.content-section[hidden] {
+  display: none !important;
+}
+.dwp-side-navigation__link--active {
+  font-weight: bold;
+  text-decoration: none;
+}
+</style>
+
+<script>
+window.addEventListener('load', function() {
+    const links = document.querySelectorAll('.dwp-side-navigation__link');
+    
+    // Function to initialize GOV.UK components
+    function initGovukComponents(element) {
+        if (window.GOVUKFrontend) {
+            // Initialize all GOV.UK components in the section
+            window.GOVUKFrontend.initAll({
+                scope: element
+            });
+            
+            // Specifically initialize tabs
+            const tabs = element.querySelectorAll('[data-module="govuk-tabs"]');
+            tabs.forEach(tab => {
+                new window.GOVUKFrontend.Tabs(tab).init();
+            });
+        }
+    }
+
+    // Initialize components in the first visible section
+    const firstSection = document.querySelector('.content-section:not([hidden])');
+    if (firstSection) {
+        initGovukComponents(firstSection);
+    }
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Get the section ID from data attribute
+            const sectionId = this.getAttribute('data-section');
+            
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.hidden = true;
+            });
+            
+            // Show the target section
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.hidden = false;
+                // Initialize components in the newly shown section
+                initGovukComponents(targetSection);
+            }
+            
+            // Update active state
+            links.forEach(l => l.classList.remove('dwp-side-navigation__link--active'));
+            this.classList.add('dwp-side-navigation__link--active');
+        });
+    });
+    
+    // Set first link as active by default
+    const firstLink = document.querySelector('.dwp-side-navigation__link');
+    if (firstLink) {
+        firstLink.classList.add('dwp-side-navigation__link--active');
+    }
+});
+</script>
+
 {% endblock %}

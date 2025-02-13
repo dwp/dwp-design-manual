@@ -4,15 +4,56 @@ $govuk-global-styles: true;
 // We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
 $govuk-assets-path: '/govuk/assets/';
 
-// Import GOV.UK Frontend and any extension styles if extensions have been configured
-
+// Import GOV.UK Frontend
+@import "../../../node_modules/govuk-frontend/dist/govuk/all";
 
 // Patterns that aren't in Frontend
 @import "patterns/related-items";
 @import 'node_modules/dfe-frontend/packages/dfefrontend';
+
 // Variables
 $site-width:  1080px;
 $dwp-primary-color: govuk-colour("turquoise");
+$nav-background-color: $color_dfe-blue;
+
+// Service navigation styles
+.dwp-service-nav {
+  background-color: $nav-background-color;
+  padding: govuk-spacing(2) 0;
+  margin-bottom: govuk-spacing(8);
+  border-bottom: 0;
+}
+
+.dwp-service-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dwp-service-nav__item {
+  display: inline-block;
+  margin-right: govuk-spacing(4);
+  margin-bottom: 0;
+}
+
+.dwp-service-nav__link,
+.dwp-service-nav__link:link,
+.dwp-service-nav__link:visited {
+  @include govuk-font($size: 19);
+  color: govuk-colour("white") !important;
+  text-decoration: none;
+}
+
+.dwp-service-nav__link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  color: govuk-colour("white") !important;
+}
+
+.dwp-service-nav__link:focus {
+  @include govuk-focused-text;
+  color: $govuk-text-colour !important;
+}
 
 // Components that aren't in Frontend
 @import "components/big-bar";
