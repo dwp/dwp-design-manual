@@ -1,0 +1,141 @@
+{% extends "dwp-layout-big-bar.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+
+{% block page_title %}
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main">
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      {{ dwpSideNavigation({
+        items: [
+          {
+            text: "What is UCD?",
+            href: "#what-is-ucd",
+            selectedItem: true
+          },
+          {
+            text: "Key stages",
+            href: "#key-stages"
+          },
+          {
+            text: "How UCD improves public services",
+            href: "#how-ucd-improves"
+          },
+          {
+            text: "Tools and methods",
+            href: "#tools-and-methods"
+          },
+          {
+            text: "Essential skills",
+            href: "#essential-skills"
+          },
+          {
+            text: "Common barriers and solutions",
+            href: "#common-barriers"
+          },
+          {
+            text: "HCD vs UCD",
+            href: "#hcd-vs-ucd"
+          },
+          {
+            text: "Importance of research",
+            href: "#importance-of-research"
+          }
+        ]
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-three-quarters">
+      <div id="what-is-ucd" class="content-section">
+        {% include "./content/what-is-ucd.html" %}
+      </div>
+
+      <div id="key-stages" class="content-section" hidden>
+        {% include "./content/key-stages.html" %}
+      </div>
+
+      <div id="how-ucd-improves" class="content-section" hidden>
+        {% include "./content/how-ucd-improves-public-services.html" %}
+      </div>
+
+      <div id="tools-and-methods" class="content-section" hidden>
+        {% include "./content/tools-and-methods.html" %}
+      </div>
+
+      <div id="essential-skills" class="content-section" hidden>
+        {% include "./content/essential-skills.html" %}
+      </div>
+
+      <div id="common-barriers" class="content-section" hidden>
+        {% include "./content/common-barriers-and-solutions.html" %}
+      </div>
+
+      <div id="hcd-vs-ucd" class="content-section" hidden>
+        {% include "./content/hcd-vs-ucd.html" %}
+      </div>
+
+      <div id="importance-of-research" class="content-section" hidden>
+        {% include "./content/importance-of-ongoing-research.html" %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.dwp-side-navigation__link');
+      const contentSections = document.querySelectorAll('.content-section');
+
+      // Show initial section
+      showSection('#what-is-ucd');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          
+          // Update navigation
+          navLinks.forEach(navLink => {
+            navLink.classList.remove('dwp-side-navigation__link--selected');
+          });
+          this.classList.add('dwp-side-navigation__link--selected');
+          
+          // Show selected section
+          showSection(href);
+          
+          // Update URL without scroll
+          history.pushState(null, '', href);
+        });
+      });
+
+      function showSection(sectionId) {
+        contentSections.forEach(section => {
+          if (section.id === sectionId.substring(1)) {
+            section.hidden = false;
+          } else {
+            section.hidden = true;
+          }
+        });
+      }
+
+      // Handle browser back/forward
+      window.addEventListener('popstate', function() {
+        const hash = window.location.hash || '#what-is-ucd';
+        showSection(hash);
+        const activeLink = document.querySelector(`[href="${hash}"]`);
+        if (activeLink) {
+          navLinks.forEach(link => link.classList.remove('dwp-side-navigation__link--selected'));
+          activeLink.classList.add('dwp-side-navigation__link--selected');
+        }
+      });
+    });
+  </script>
+
+</main>
+{% endblock %}
