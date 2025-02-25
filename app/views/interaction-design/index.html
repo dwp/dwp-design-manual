@@ -1,4 +1,4 @@
-{% extends "dwp-layout-big-bar.html" %}
+{% extends "interaction-layout-big-bar.html" %}
 {% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
 
@@ -6,14 +6,13 @@
   Interaction Design in DWP - DWP Digital User Centred Design Manual
 {% endblock %}
 
-{% block hero_content %}
-  <h1 class="govuk-heading-xl no-margin">Interaction Design in DWP</h1>
-{% endblock %}
+
 
 {% block content %}
 <main id="content" role="main">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
+      <a href="javascript:history.back()" class="govuk-back-link">Back</a>
       <nav class="dwp-side-navigation" aria-label="Side" role="navigation">
         <ul class="dwp-side-navigation__list">
           <li class="dwp-side-navigation__item">
@@ -78,6 +77,11 @@
                   Working with performance analysts
                 </a>
               </li>
+              <li class="dwp-side-navigation__item">
+                <a id="working-with-sd" href="#working-with-sd" class="dwp-side-navigation__link" data-section="working-with-sd">
+                  Working with service designers
+                </a>
+              </li>
 
           </li>
         </ul>
@@ -129,6 +133,11 @@
       <div id="documenting-design-decisions" class="content-section" hidden>
         {% include "./content/documenting-design-decisions.html" %}
       </div>
+
+      <div id="working-with-sd" class="content-section" hidden>
+        {% include "./content/working-with-sd.html" %}
+      </div>
+      
 
       <div id="working-with-performance-analysts" class="content-section" hidden>
         {% include "./content/working-with-performance-analysts.html" %}

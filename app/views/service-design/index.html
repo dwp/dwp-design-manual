@@ -1,4 +1,4 @@
-{% extends "dwp-layout-big-bar.html" %}
+{% extends "sd-layout-big-bar.html" %}
 {% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
 
@@ -6,58 +6,51 @@
   Service Design in DWP - DWP Digital User Centred Design Manual
 {% endblock %}
 
-{% block hero_content %}
-  <h1 class="govuk-heading-xl no-margin">Service Design in DWP</h1>
-{% endblock %}
 
 {% block content %}
 <main id="content" role="main">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
+      <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
       <nav class="dwp-side-navigation" aria-label="Side" role="navigation">
         <ul class="dwp-side-navigation__list">
           <li class="dwp-side-navigation__item">
-            <a id="what-service-designers-do" href="#what-service-designers-do" class="dwp-side-navigation__link" data-section="what-service-designers-do">
-              What service designers do
+            <a id="what-service-designers-do" href="#what-is-a-service" class="dwp-side-navigation__link" data-section="what-is-a-service">
+              What is a service?
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="expectations" href="#expectations" class="dwp-side-navigation__link" data-section="expectations">
-              Expectations for service designers
+            <a id="what-is-service-design" href="#what-is-service-design" class="dwp-side-navigation__link" data-section="what-is-service-design">
+              What is service design?
             </a>
           </li>
       
        
           <li class="dwp-side-navigation__item">
-            <a id="tools" href="#tools" class="dwp-side-navigation__link" data-section="tools">
-              Tools
+            <a id="what-do-service-designers-do" href="#what-do-service-designers-do" class="dwp-side-navigation__link" data-section="what-do-service-designers-do">
+              What do service designers do?
             </a>
           </li>
-          <li class="dwp-side-navigation__item">
-            <a id="community" href="#community" class="dwp-side-navigation__link" data-section="community">
-              Community
-            </a>
-          </li>
-   
-          </li>
+      
         </ul>
       </nav>
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-      <div id="what-service-designers-do" class="content-section">
-        {% include "./content/what-service-designers-do.html" %}
+      <div id="what-is-a-service" class="content-section">
+        {% include "./content/what-is-a-service.html" %}
       </div>
-      <div id="community" class="content-section" hidden>
-        {% include "./content/community.html" %}
+      <div id="what-is-service-design" class="content-section" hidden>
+        {% include "./content/what-is-service-design.html" %}
       </div>
 
       <div id="expectations" class="content-section" hidden>
-        {% include "./content/expectations.html" %}
+        {% include "./content/what-is-service-design.html" %}
       </div>
 
-      <div id="tools" class="content-section" hidden>
-        {% include "./content/tools.html" %}
+      <div id="what-do-service-designers-do" class="content-section" hidden>
+        {% include "./content/what-do-service-designers-do.html" %}
       </div>
       
       
