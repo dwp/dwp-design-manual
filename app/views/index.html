@@ -1,88 +1,114 @@
-{% extends "index-dwp-layout-big-bar.html" %}
+{% extends "dwp-layout-big-bar.html" %}
 {% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
 
 {% block page_title %}
-  Interaction Design in DWP - DWP Digital User Centred Design Manual
-{% endblock %}
-
-{% block before_content %}
-  <h1 class="govuk-heading-xl no-margin">User Centred Design in the Department for Work and Pensions (DWP)</h1>
+ DWP Digital User Centred Design Manual
 {% endblock %}
 
 
 {% block content %}
 
 <main id="content" role="main">
-  {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}  {{ card({
-    cards: [
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "interaction-design/",
-        "openInNewTab": false,
-        "heading": "Interaction Design",
-        "meta": "How we design how users interact with DWP services."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "service-design/",
-        "openInNewTab": false,
-        "heading": "Service Design",
-        "meta": "How we design end-to-end services and user journeys."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "content-design/",
-        "openInNewTab": false,
-        "heading": "Content Design",
-        "meta": "How we design content for our products and services."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "/images/sample-image.jpg",
-        "altText": "Sample Image",
-        "headingLevel": "3",
-        "linkCard": true,
-        "link": "resources",
-        "openInNewTab": false,
-        "heading": "Resources",
-        "meta": "Resources for designing services."
-      }, 
-      {
-        "imageCard": false,
-        "imagePath": "",
-        "altText": "",
-        "headingLevel": "2",
-        "linkCard": true,
-        "link": "https://design-system.dwp.gov.uk/index",
-        "openInNewTab": false,
-        "heading": "The DWP Design System",
-        "meta": "Use this design system to make your service consistent with DWP."
-      },
-      {
-        "imageCard": false,
-        "imagePath": "",
-        "altText": "",
-        "headingLevel": "2",
-        "linkCard": true,
-        "link": "https://accessibility-manual.dwp.gov.uk",
-        "openInNewTab": false,
-        "heading": "The DWP Accessibility Manual",
-        "meta": "Guidance and best practice for building accessible services."
-      }
-    ]
-  }) }}
+   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">How we do User Centred Design</h1>
+      <p> We follow the GOV.UK Government Design Principles, Service Standard and content design guidance. We also follow the GOV.UK accessibility strategy
+         to improve the accessibility of our services.</p>
+         <p>We have published more information where you can <a href="/home/intro-to-ucd/overview">find out more about how we do user centred design at DWP.</a></p>
+     </div>   
+
+     </div>
+     <div class="govuk-grid-row">
+     <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      <h2 class="govuk-heading-m">UCD roles</h2>
+
+      {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}  {{ card({
+        cards: [
+          {
+            "imageCard": false,
+            "imagePath": "/images/sample-image.jpg",
+            "altText": "Sample Image",
+            "headingLevel": "3",
+            "linkCard": true,
+            "link": "interaction-design/",
+            "openInNewTab": false,
+            "heading": "Interaction Design",
+            "meta": "How we design how users interact with DWP services."
+          },
+          {
+            "imageCard": false,
+            "imagePath": "/images/sample-image.jpg",
+            "altText": "Sample Image",
+            "headingLevel": "3",
+            "linkCard": true,
+            "link": "service-design/",
+            "openInNewTab": false,
+            "heading": "Service Design",
+            "meta": "How we design end-to-end services and user journeys."
+          },
+          {
+            "imageCard": false,
+            "imagePath": "/images/sample-image.jpg",
+            "altText": "Sample Image",
+            "headingLevel": "3",
+            "linkCard": true,
+            "link": "content-design/",
+            "openInNewTab": false,
+            "heading": "Content Design",
+            "meta": "How we design content for our products and services."
+          }
+          ]
+        }) }}
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">UCD resources</h2>
+        {% from 'node_modules/dfe-frontend/packages/components/card/macro.njk' import card %}  {{ card({
+            cards: [
+            {
+                "imageCard": false,
+                "imagePath": "/images/sample-image.jpg",
+                "altText": "Sample Image",
+                "headingLevel": "3",
+                "linkCard": true,
+                "link": "principles",
+                "openInNewTab": false,
+                "heading": "UCD Design Principles",
+                "meta": "These principles are for everyone working towards our digital strategy in DWP and complement many elements of the service standard from GDS."
+              },
+              {
+                "imageCard": false,
+                "imagePath": "/images/sample-image.jpg",
+                "altText": "Sample Image",
+                "headingLevel": "3",
+                "linkCard": true,
+                "link": "https://design-system.dwp.gov.uk/index",
+                "openInNewTab": false,
+                "heading": "The DWP Design System",
+                "meta": "Use this design system to make your service consistent with DWP."
+              },
+              {
+                "imageCard": false,
+                "imagePath": "/images/sample-image.jpg",
+                "altText": "Sample Image",
+                "headingLevel": "3",
+                "linkCard": true,
+                "link": "https://accessibility-manual.dwp.gov.uk",
+                "openInNewTab": false,
+                "heading": "The DWP Accessibility Manual",
+                "meta": "Guidance and best practice for building accessible services."
+              }
+              ]
+            }) }}
+      </div>
+      </div>
+  </div>
 </main>
 {% endblock %}
+
+
+
