@@ -7,6 +7,7 @@
   "name": "govuk-prototype-kit",
   "dependencies": {
     "@dwp/dwp-frontend": "^3.3.0",
+    "@dwp/uc-templates-plugin": "github:dwp/UC-templates-plugin",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.3",
     "dfe-frontend": "^2.0.1",
