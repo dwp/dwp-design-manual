@@ -589,3 +589,40 @@ color:#6f72af
 .govuk-link--no-visited-state:visited {
   color:#6f72af
 }
+.dfe-action-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dfe-action-list li a {
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 15px 20px;
+  background-color: #f3f2f1;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #6f72af;
+}
+
+.dfe-action-list li a:hover, .dfe-action-list li a:focus {
+  background-color: #6f72af;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* Chevron Icon */
+.chevron {
+  width: 24px;
+  height: 24px;
+  fill: #6f72af;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.dfe-action-list li a:hover .chevron,
+.dfe-action-list li a:focus .chevron {
+  fill: #ffffff;
+}

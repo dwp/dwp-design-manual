@@ -13,77 +13,76 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
       <a href="javascript:history.back()" class="govuk-back-link">Back</a>
-      <nav class="dwp-side-navigation" aria-label="Side" role="navigation">
+
+      <nav class="dwp-side-navigation">
         <ul class="dwp-side-navigation__list">
           <li class="dwp-side-navigation__item">
-            <a id="what-interaction-designers-do" href="#what-interaction-designers-do" class="dwp-side-navigation__link" data-section="what-interaction-designers-do">
+            <a class="dwp-side-navigation__link" href="#what-interaction-designers-do" data-section="what-interaction-designers-do">
               What interaction designers do
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="expectations" href="#expectations" class="dwp-side-navigation__link" data-section="expectations">
+            <a class="dwp-side-navigation__link" href="#expectations" data-section="expectations">
               Expectations for interaction designers
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="design-clinics" href="#design-clinics" class="dwp-side-navigation__link" data-section="design-clinics">
+            <a class="dwp-side-navigation__link" href="design-clinics" data-section="design-clinics">
               Design clinics
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="prototyping" href="#prototyping" class="dwp-side-navigation__link" data-section="prototyping">
+            <a class="dwp-side-navigation__link" href="#prototyping"  data-section="prototyping">
               Prototyping
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="tools" href="#tools" class="dwp-side-navigation__link" data-section="tools">
+            <a class="dwp-side-navigation__link" href="#tools" data-section="tools">
               Tools
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="community" href="#community" class="dwp-side-navigation__link" data-section="community">
+            <a class="dwp-side-navigation__link" href="#community" data-section="community">
               Community
             </a>
           </li>
    
 
           <li class="dwp-side-navigation__item">
-                <a id="definition-of-done" href="#definition-of-done" class="dwp-side-navigation__link" data-section="definition-of-done">
+            <a class="dwp-side-navigation__link" href="#definition-of-done" data-section="definition-of-done">
                   Definition of done
                 </a>
               </li>
               <li class="dwp-side-navigation__item">
-                <a id="measures-of-success" href="#measures-of-success" class="dwp-side-navigation__link" data-section="measures-of-success">
+                <a class="dwp-side-navigation__link" href="#measures-of-success" data-section="measures-of-success">
                   Measures of success
                 </a>
               </li>
               <li class="dwp-side-navigation__item">
-                <a id="documenting-design-debt" href="#documenting-design-debt" class="dwp-side-navigation__link" data-section="documenting-design-debt">
+                <a class="dwp-side-navigation__link" href="#documenting-design-debt" data-section="documenting-design-debt">
                   Documenting design debt
                 </a>
               </li>
               <li class="dwp-side-navigation__item">
-                <a id="giving-receiving-feedback" href="#giving-receiving-feedback" class="dwp-side-navigation__link" data-section="giving-receiving-feedback">
+                <a class="dwp-side-navigation__link" href="#giving-receiving-feedback" data-section="giving-receiving-feedback">
                   Giving and receiving feedback
                 </a>
               </li>
               <li class="dwp-side-navigation__item">
-                <a id="documenting-design-decisions" href="#documenting-design-decisions" class="dwp-side-navigation__link" data-section="documenting-design-decisions">
+                <a class="dwp-side-navigation__link" href="#documenting-design-decisions" data-section="documenting-design-decisions">
                   Documenting design decisions
                 </a>
               </li>
               <li class="dwp-side-navigation__item">
-                <a id="working-with-performance-analysts" href="#working-with-performance-analysts" class="dwp-side-navigation__link" data-section="working-with-performance-analysts">
+                <a class="dwp-side-navigation__link" href="#working-with-performance-analysts" data-section="working-with-performance-analysts">
                   Working with performance analysts
                 </a>
               </li>
               <li class="dwp-side-navigation__item">
-                <a id="working-with-sd" href="#working-with-sd" class="dwp-side-navigation__link" data-section="working-with-sd">
+                <a class="dwp-side-navigation__link" href="#working-with-sd" data-section="working-with-sd">
                   Working with service designers
                 </a>
               </li>
-
-          </li>
         </ul>
       </nav>
     </div>
@@ -126,6 +125,10 @@
         {% include "./content/documenting-design-debt.html" %}
       </div>
 
+      <div id="working-with-performance-analysts" class="content-section" hidden>
+        {% include "./content/working-with-performance-analysts.html" %}
+      </div>
+
       <div id="giving-receiving-feedback" class="content-section" hidden>
         {% include "./content/giving-receiving-feedback.html" %}
       </div>
@@ -139,9 +142,7 @@
       </div>
       
 
-      <div id="working-with-performance-analysts" class="content-section" hidden>
-        {% include "./content/working-with-performance-analysts.html" %}
-      </div>
+     
       
       
       
@@ -153,44 +154,68 @@
 
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Hide all sections except the selected one
-    const selectedItem = document.querySelector('[href="' + window.location.hash + '"]') || 
-                        document.querySelector('.dwp-side-navigation__link');
-    const selectedId = selectedItem ? selectedItem.getAttribute('href').substring(1) : 'what-interaction-designers-do';
+window.addEventListener('load', function() {
+    const links = document.querySelectorAll('.dwp-side-navigation__link');
     
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.hidden = section.id !== selectedId;
-    });
+    // Function to initialize GOV.UK components
+    function initGovukComponents(element) {
+        if (window.GOVUKFrontend) {
+            // Initialize all GOV.UK components in the section
+            window.GOVUKFrontend.initAll({
+                scope: element
+            });
+            
+            // Specifically initialize tabs
+            const tabs = element.querySelectorAll('[data-module="govuk-tabs"]');
+            tabs.forEach(tab => {
+                new window.GOVUKFrontend.Tabs(tab).init();
+            });
+        }
+    }
 
-    // Add click handlers to all navigation links
-    document.querySelectorAll('.dwp-side-navigation__link').forEach(link => {
+    // Initialize components in the first visible section
+    const firstSection = document.querySelector('.content-section:not([hidden])');
+    if (firstSection) {
+        initGovukComponents(firstSection);
+    }
+    
+    links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
+            
+            // Get the section ID from data attribute
+            const sectionId = this.getAttribute('data-section');
             
             // Hide all sections
             document.querySelectorAll('.content-section').forEach(section => {
                 section.hidden = true;
             });
             
-            // Show clicked section
-            const targetSection = document.getElementById(targetId);
+            // Show the target section
+            const targetSection = document.getElementById(sectionId);
             if (targetSection) {
                 targetSection.hidden = false;
-                window.location.hash = targetId; // Update URL
+                // Initialize components in the newly shown section
+                initGovukComponents(targetSection);
             }
+            
+            // Update active state
+            links.forEach(l => l.classList.remove('dwp-side-navigation__link--active'));
+            this.classList.add('dwp-side-navigation__link--active');
         });
     });
-
-    // Handle back/forward navigation
-    window.addEventListener('hashchange', function() {
-        const newId = window.location.hash.substring(1);
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.hidden = section.id !== newId;
-        });
-    });
+    
+    // Set first link as active by default
+    const firstLink = document.querySelector('.dwp-side-navigation__link');
+    if (firstLink) {
+        firstLink.classList.add('dwp-side-navigation__link--active');
+    }
 });
-
 </script>
+
+<style>
+.content-section[hidden] {
+  display: none !important;
+}
+</style>
 {% endblock %}
