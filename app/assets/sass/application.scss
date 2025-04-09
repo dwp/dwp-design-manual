@@ -14,7 +14,7 @@ $govuk-assets-path: '/govuk/assets/';
 // Variables
 $site-width:  1080px;
 $dwp-primary-color: govuk-colour("turquoise");
-$nav-background-color: 	#6f72af;
+$nav-background-color: 	#634169;
 
 // Service navigation styles
 .dwp-service-nav {
@@ -446,7 +446,7 @@ code {
 
 .dfe-card:hover,
 .dfe-card:focus-within {
-  background-color: 	#6f72af;
+  background-color: 	#634169;
 }
 
 .dfe-card:hover a,
@@ -473,7 +473,7 @@ code {
 }
 
 .dfe-card-link--header--no-visited-state:link {
- color: #6f72af;
+ color: #634169;
 
   
 }
@@ -483,7 +483,7 @@ code {
    
  }
 .dfe-card-link--header {
-  text-decoration-style: #6f72af;
+  text-decoration-style: #634169;
 
   
 }
@@ -500,9 +500,9 @@ code {
 .app-masthead {
   padding-top: 0px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #6f72af;
+  border-bottom: 1px solid #634169;
   color: #fff;
-  background-color:#6f72af;
+  background-color:#634169;
   width:100%
 }
 
@@ -572,22 +572,22 @@ code {
 } 
 
 .govuk-button--start {
-color:#6f72af
+color:#634169
 
 }
 
 .govuk-button--inverse {
-  color:#6f72af
+  color:#634169
 }
 .govuk-button--inverse:visited {
-  color:#6f72af
+  color:#634169
 
 }
 .govuk-link--no-visited-state:link {
-  color:#6f72af
+  color:#634169
 }
 .govuk-link--no-visited-state:visited {
-  color:#6f72af
+  color:#634169
 }
 .dfe-action-list {
   list-style-type: none;
@@ -604,11 +604,11 @@ color:#6f72af
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
-  color: #6f72af;
+  color: #634169;
 }
 
 .dfe-action-list li a:hover, .dfe-action-list li a:focus {
-  background-color: #6f72af;
+  background-color: #634169;
   color: #ffffff;
   box-shadow: none;
 }
@@ -617,7 +617,7 @@ color:#6f72af
 .chevron {
   width: 24px;
   height: 24px;
-  fill: #6f72af;
+  fill: #634169;
   flex-shrink: 0;
   margin-left: 10px;
 }
