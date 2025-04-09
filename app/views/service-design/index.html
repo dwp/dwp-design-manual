@@ -13,22 +13,22 @@
     <div class="govuk-grid-column-one-third">
       <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-      <nav class="dwp-side-navigation" aria-label="Side" role="navigation">
+      <nav class="dwp-side-navigation">
         <ul class="dwp-side-navigation__list">
           <li class="dwp-side-navigation__item">
-            <a id="what-service-designers-do" href="#what-is-a-service" class="dwp-side-navigation__link" data-section="what-is-a-service">
+            <a class="dwp-side-navigation__link"href="#what-is-a-service"  data-section="what-is-a-service">
               What is a service?
             </a>
           </li>
           <li class="dwp-side-navigation__item">
-            <a id="what-is-service-design" href="#what-is-service-design" class="dwp-side-navigation__link" data-section="what-is-service-design">
+            <a class="dwp-side-navigation__link" href="#what-is-service-design"  data-section="what-is-service-design">
               What is service design?
             </a>
           </li>
       
        
           <li class="dwp-side-navigation__item">
-            <a id="what-do-service-designers-do" href="#what-do-service-designers-do" class="dwp-side-navigation__link" data-section="what-do-service-designers-do">
+            <a class="dwp-side-navigation__link" href="#what-do-service-designers-do" data-section="what-do-service-designers-do">
               What do service designers do?
             </a>
           </li>
@@ -61,46 +61,64 @@
 </main>
 
 
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Hide all sections except the selected one
-    const selectedItem = document.querySelector('[href="' + window.location.hash + '"]') || 
-                        document.querySelector('.dwp-side-navigation__link');
-    const selectedId = selectedItem ? selectedItem.getAttribute('href').substring(1) : 'what-interaction-designers-do';
-    
-    document.querySelectorAll('.content-section').forEach(section => {
-        section.hidden = section.id !== selectedId;
-    });
-
-    // Add click handlers to all navigation links
-    document.querySelectorAll('.dwp-side-navigation__link').forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.hidden = true;
-            });
-            
-            // Show clicked section
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.hidden = false;
-                window.location.hash = targetId; // Update URL
-            }
-        });
-    });
-
-    // Handle back/forward navigation
-    window.addEventListener('hashchange', function() {
-        const newId = window.location.hash.substring(1);
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.hidden = section.id !== newId;
-        });
-    });
-});
-
-</script>
+  window.addEventListener('load', function() {
+      const links = document.querySelectorAll('.dwp-side-navigation__link');
+      
+      // Function to initialize GOV.UK components
+      function initGovukComponents(element) {
+          if (window.GOVUKFrontend) {
+              // Initialize all GOV.UK components in the section
+              window.GOVUKFrontend.initAll({
+                  scope: element
+              });
+              
+              // Specifically initialize tabs
+              const tabs = element.querySelectorAll('[data-module="govuk-tabs"]');
+              tabs.forEach(tab => {
+                  new window.GOVUKFrontend.Tabs(tab).init();
+              });
+          }
+      }
+  
+      // Initialize components in the first visible section
+      const firstSection = document.querySelector('.content-section:not([hidden])');
+      if (firstSection) {
+          initGovukComponents(firstSection);
+      }
+      
+      links.forEach(link => {
+          link.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              // Get the section ID from data attribute
+              const sectionId = this.getAttribute('data-section');
+              
+              // Hide all sections
+              document.querySelectorAll('.content-section').forEach(section => {
+                  section.hidden = true;
+              });
+              
+              // Show the target section
+              const targetSection = document.getElementById(sectionId);
+              if (targetSection) {
+                  targetSection.hidden = false;
+                  // Initialize components in the newly shown section
+                  initGovukComponents(targetSection);
+              }
+              
+              // Update active state
+              links.forEach(l => l.classList.remove('dwp-side-navigation__link--active'));
+              this.classList.add('dwp-side-navigation__link--active');
+          });
+      });
+      
+      // Set first link as active by default
+      const firstLink = document.querySelector('.dwp-side-navigation__link');
+      if (firstLink) {
+          firstLink.classList.add('dwp-side-navigation__link--active');
+      }
+  });
+  </script>
+  
 {% endblock %}

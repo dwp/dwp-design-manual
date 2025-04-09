@@ -1,0 +1,201 @@
+{% extends "what-is-ucd-layout-big-bar.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+
+{% block page_title %}
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      <a href="javascript:void(0)" onclick="history.back()" class="govuk-back-link">Back</a>
+
+    <nav class="dwp-side-navigation" aria-label="Page navigation">
+    <ul class="dwp-side-navigation__list">
+      <li class="dwp-side-navigation__item">
+      <a class="dwp-side-navigation__link" href="#preparing-for-assessment" data-section="preparing-for-assessment">Preparing for an assessment</a>
+      </li>
+      <li class="dwp-side-navigation__item"></li>
+      <a class="dwp-side-navigation__link" href="#what-to-cover-on-the-day" data-section="what-to-cover-on-the-day">What to cover on the day</a>
+      </li>
+      <li class="dwp-side-navigation__item">
+      <a class="dwp-side-navigation__link" href="#answer-questions-from-the-panel" data-section="answer-questions-from-the-panel">Answer questions from the panel</a>
+      </li>
+      <li class="dwp-side-navigation__item">
+      <a class="dwp-side-navigation__link" href="#get-your-result" data-section="get-your-result">Get your result</a>
+      </li>
+      <li class="dwp-side-navigation__item">
+      <a class="dwp-side-navigation__link" href="#assessment-reports" data-section="assessment-reports">Assessment reports</a>
+      </li>
+      <li class="dwp-side-navigation__item">
+      <a class="dwp-side-navigation__link" href="#examples-and-case-studies" data-section="examples-and-case-studies">Examples and case studies</a>
+      </li>
+    </ul>
+    </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+ 
+      <div id="preparing-for-assessment" class="content-section">
+        <h2 class="govuk-heading-m">Preparing for an assessment</h2>
+        <p class="govuk-body">It can be tempting to spend a long time preparing for assessments.</p>
+        <p class="govuk-body">It’s important to prepare, but not over-do it. Do just enough to make sure you can give an open and honest account 
+          of the work you’ve done and what you’ve built.</p>
+          
+          <p class="govuk-body">And remember that the panel is not there to catch you out. They offer a peer review of the 
+          work you’ve done and help you understand anything you’ll need to change or improve.</p>
+      </div>
+
+      <div id="what-to-cover-on-the-day" class="content-section" hidden>
+        <h2 class="govuk-heading-m">What to cover on the day</h2>
+        <p>Spend the first 30 minutes of the assessment talking about and demonstrating what you’ve built.
+           During that time, you’ll need to:
+          <ul class="govuk-list govuk-list--bullet">
+            <li>give an overview of your service</li>
+            <li>walk the panel through the user journey</li>
+          </ul>
+        <p class="govuk-body">In any assessment, it’s useful to start by briefly setting the scene. 
+          This usually means talking about the things you learnt during your discovery and alpha, 
+          including:</p> 
+          <ul class="govuk-list govuk-list--bullet">
+            <li>why you’re solving the problem you’re solving</li>
+            <li>who your users are and what they’re trying to do</li>
+            <li>the work you’ve done to understand the user’s wider journey, if there is one</li>
+          </ul>
+        <p class="govuk-body">It’s also useful to explain any changes you made based on the feedback the 
+          service got at its previous assessment, if it had one.</p>
+        <p class="govuk-body"> 
+          You probably shouldn’t spend more than 10 minutes covering these issues.</p>
+      </div>
+
+      <div id="answer-questions-from-the-panel" class="content-section" hidden>
+        <h2 class="govuk-heading-m">Answer questions from the panel</h2>
+        <p>Once you’ve demonstrated your service, the panel will spend the remaining time asking questions
+           about the decisions you’ve made and how you’ve built your service. </p> 
+        <p class="govuk-body">There’s no specific set of questions that a panel will ask during an assessment. 
+          It’ll differ depending on the service you’ve built and which development phase you’re in.</p>
+        <p class="govuk-body">It’s a good idea to make sure you and your team are familiar with:</p>
+        <ul class="govuk-list govuk-list--bullet">  
+          <li>the Service Standard</li>
+          <li><a href="https://www.gov.uk/service-manual/agile-delivery#phase-of-an-agile-project" class="govuk-link">the agile phases</a> and the requirements for the development phase you’re working in</li>
+        </ul>
+        <p class="govuk-body">There’s also guidance on how 
+          <a href="https://www.gov.uk/service-manual/service-assessments/how-to-apply-the-service-standard" class="govuk-link">
+            assessors will apply the Service Standard</a>.</p> 
+      </div>
+
+      <div id="get-your-result" class="content-section" hidden>
+        <h2 class="govuk-heading-m">Get your result</h2>
+        <p>Your service will be assessed as ‘green’, ‘amber’ or ‘red’. This will be decided by the panel. </p> 
+        <p class="govuk-body">‘Green’ means that the service has met the standard and can continue to the next
+           phase of delivery.</p>
+
+<p class="govuk-body">‘Amber’ means that the standard has not yet been met, but the issues are not critical. 
+  The service can continue to the next phase of delivery while you work on the amber issues.
+You need to fix amber issues within a reasonable period of time, usually up to 3 months. 
+You must record your progress in a live ‘tracking amber evidence’ document which will be visible to 
+the assessments team.</p>
+
+<p class="govuk-body">‘Red’ means that the standard has not yet been met and the issues are critical. 
+  The service will stay in its current phase of delivery. Further work needs to be done on the points that 
+  did not meet the standard before they can be reassessed. 
+  Not meeting the Service Standard doesn’t mean that you failed.</p>
+
+<p class class="govuk-body">If your service has been assessed by a cross-government panel you’ll get your result in a report within 3 to 5 working days.
+
+What happens next depends on the result of the assessment, and the delivery phase your service is in.</p>
+      </div>
+
+      <div id="assessment-reports" class="content-section" hidden>
+        <h2 class="govuk-heading-m">Assessment reports</h2>
+        <p>CDDO will publish the outcome of the assessment - see the <a href="https://www.gov.uk/service-standard-reports" class="govuk-link">Service Standard Reports</a> page 
+          for a list of published Service Standard Reports. You’ll have the chance to fact check it before it’s published.</p>
+      </div>
+
+      <div id="examples-and-case-studies" class="content-section" hidden>
+        <h2 class="govuk-heading-m">Examples and case studies</h2>
+        <p class="govuk-body">Read the Department for Work and Pensions’ blog post on
+           <a href="https://dwpdigital.blog.gov.uk/2015/07/02/our-successful-gds-alpha-review-what-i-learned/" 
+           class="govuk-link">" what the Secure Communications team learned from their alpha assessment.</p>
+
+         <p class="govuk-body"> Read the Office of the Public Guardian’s (OPG) blog post on 
+          <a href="https://mojdigital.blog.gov.uk/2021/02/02/the-5-year-beta-phase-how-we-prepared-for-live-assessment/" class="govuk-link">how they 
+          prepared the Complete the deputy report service for live assessment.</p>
+      </div>
+  </div>
+  </div>
+  </main>
+  <style>
+    .content-section[hidden] {
+      display: none !important;
+    }
+    .dwp-side-navigation__link--active {
+      font-weight: bold;
+      text-decoration: none;
+    }
+    </style>
+    
+    <script>
+    window.addEventListener('load', function() {
+        const links = document.querySelectorAll('.dwp-side-navigation__link');
+        
+        // Function to initialize GOV.UK components
+        function initGovukComponents(element) {
+            if (window.GOVUKFrontend) {
+                // Initialize all GOV.UK components in the section
+                window.GOVUKFrontend.initAll({
+                    scope: element
+                });
+                
+                // Specifically initialize tabs
+                const tabs = element.querySelectorAll('[data-module="govuk-tabs"]');
+                tabs.forEach(tab => {
+                    new window.GOVUKFrontend.Tabs(tab).init();
+                });
+            }
+        }
+    
+        // Initialize components in the first visible section
+        const firstSection = document.querySelector('.content-section:not([hidden])');
+        if (firstSection) {
+            initGovukComponents(firstSection);
+        }
+        
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the section ID from data attribute
+                const sectionId = this.getAttribute('data-section');
+                
+                // Hide all sections
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.hidden = true;
+                });
+                
+                // Show the target section
+                const targetSection = document.getElementById(sectionId);
+                if (targetSection) {
+                    targetSection.hidden = false;
+                    // Initialize components in the newly shown section
+                    initGovukComponents(targetSection);
+                }
+                
+                // Update active state
+                links.forEach(l => l.classList.remove('dwp-side-navigation__link--active'));
+                this.classList.add('dwp-side-navigation__link--active');
+            });
+        });
+        
+        // Set first link as active by default
+        const firstLink = document.querySelector('.dwp-side-navigation__link');
+        if (firstLink) {
+            firstLink.classList.add('dwp-side-navigation__link--active');
+        }
+    });
+    </script>
+    
+{% endblock %}

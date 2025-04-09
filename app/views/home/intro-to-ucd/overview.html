@@ -9,8 +9,7 @@
 
 {% block content %}
 <main id="content" role="main">
-  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
-
+  <a href="javascript:void(0)" onclick="history.back()" class="govuk-back-link">Back</a>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
       {{ dwpSideNavigation({
@@ -21,32 +20,24 @@
             selectedItem: true
           },
           {
-            text: "Key stages",
-            href: "#key-stages"
+            text: "Why does user-centred design matter in government?",
+            href: "#why-does-it-matter"
           },
           {
-            text: "How UCD improves public services",
-            href: "#how-ucd-improves"
+            text: "What does user-centred design actually do?",
+            href: "#what-does-it-do"
           },
           {
-            text: "Tools and methods",
-            href: "#tools-and-methods"
+            text: "What does working in a user-centred way look like?",
+            href: "#what-does-it-look-like"
           },
           {
-            text: "Essential skills",
-            href: "#essential-skills"
+            text: "What do we need from colleagues?",
+            href: "#what-do-we-need"
           },
           {
-            text: "Common barriers and solutions",
-            href: "#common-barriers"
-          },
-          {
-            text: "HCD vs UCD",
-            href: "#hcd-vs-ucd"
-          },
-          {
-            text: "Importance of research",
-            href: "#importance-of-research"
+            text: "How can you help?",
+            href: "#how-can-you-help"
           }
         ]
       }) }}
@@ -57,33 +48,27 @@
         {% include "./content/what-is-ucd.html" %}
       </div>
 
-      <div id="key-stages" class="content-section" hidden>
-        {% include "./content/key-stages.html" %}
+      <div id="why-does-it-matter" class="content-section" hidden>
+        {% include "./content/why-does-it-matter.html" %}
       </div>
 
-      <div id="how-ucd-improves" class="content-section" hidden>
-        {% include "./content/how-ucd-improves-public-services.html" %}
+      <div id="what-does-it-do" class="content-section" hidden>
+        {% include "./content/what-does-it-do.html" %}
       </div>
 
-      <div id="tools-and-methods" class="content-section" hidden>
-        {% include "./content/tools-and-methods.html" %}
+      <div id="what-does-it-look-like" class="content-section" hidden>
+        {% include "./content/what-does-it-look-like.html" %}
       </div>
 
-      <div id="essential-skills" class="content-section" hidden>
-        {% include "./content/essential-skills.html" %}
+      <div id="what-do-we-need" class="content-section" hidden>
+        {% include "./content/what-do-we-need.html" %}
       </div>
 
-      <div id="common-barriers" class="content-section" hidden>
-        {% include "./content/common-barriers-and-solutions.html" %}
+      <div id="how-can-you-help" class="content-section" hidden>
+        {% include "./content/how-can-you-help.html" %}
       </div>
 
-      <div id="hcd-vs-ucd" class="content-section" hidden>
-        {% include "./content/hcd-vs-ucd.html" %}
-      </div>
-
-      <div id="importance-of-research" class="content-section" hidden>
-        {% include "./content/importance-of-ongoing-research.html" %}
-      </div>
+ 
     </div>
   </div>
 
@@ -125,15 +110,11 @@
       }
 
       // Handle browser back/forward
-      window.addEventListener('popstate', function() {
-        const hash = window.location.hash || '#what-is-ucd';
-        showSection(hash);
-        const activeLink = document.querySelector(`[href="${hash}"]`);
-        if (activeLink) {
-          navLinks.forEach(link => link.classList.remove('dwp-side-navigation__link--selected'));
-          activeLink.classList.add('dwp-side-navigation__link--selected');
-        }
-      });
+  // Handle browser back/forward
+window.addEventListener('popstate', function() {
+  // Navigate to the previous URL in the browser's history
+  history.back();
+});
     });
   </script>
 
