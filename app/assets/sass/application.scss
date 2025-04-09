@@ -446,7 +446,7 @@ code {
 
 .dfe-card:hover,
 .dfe-card:focus-within {
-  background-color: 	#634169;
+  background-color: 	#95739D;
 }
 
 .dfe-card:hover a,
@@ -473,7 +473,7 @@ code {
 }
 
 .dfe-card-link--header--no-visited-state:link {
- color: #634169;
+ color: black;
 
   
 }
@@ -483,7 +483,7 @@ code {
    
  }
 .dfe-card-link--header {
-  text-decoration-style: #634169;
+  text-decoration-style: black;
 
   
 }
@@ -584,10 +584,10 @@ color:#634169
 
 }
 .govuk-link--no-visited-state:link {
-  color:#634169
+  color:black
 }
 .govuk-link--no-visited-state:visited {
-  color:#634169
+  color:black
 }
 .dfe-action-list {
   list-style-type: none;
@@ -624,5 +624,7 @@ color:#634169
 
 .dfe-action-list li a:hover .chevron,
 .dfe-action-list li a:focus .chevron {
-  fill: #ffffff;
+  fill: #634169;
+  ;
 }
+
