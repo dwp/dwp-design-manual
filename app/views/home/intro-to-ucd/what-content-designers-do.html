@@ -1,3 +1,15 @@
+{% extends "intro-layout-big-bar.html.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+
+{% block page_title %}
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main">
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
         <h2 class="govuk-heading-m">
           Our mission
@@ -52,3 +64,5 @@ This has a negative impact on people’s wellbeing and society as a whole. And i
 
 <p class="govuk-body">We have a related aim of promoting digital use of government services to save time and money for users and for us.</p>
 
+</main>
+{% endblock %}
