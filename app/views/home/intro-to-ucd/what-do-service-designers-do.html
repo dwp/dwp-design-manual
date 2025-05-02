@@ -1,4 +1,15 @@
-<h1 class="govuk-heading-m">What do Service Designers do?</h1>
+{% extends "intro-layout-big-bar.html.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+
+{% block page_title %}
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
+{% endblock %}
+
+
+{% block content %}
+<a href="javascript:void(0)" onclick="history.back()" class="govuk-back-link">Back</a>
+<h1 class="govuk-heading-l">What do Service Designers do?</h1>
 <p class="govuk-body">One of the challenges people face when trying to understand what Service Designers do, is that the life of
    a Service Designer can vary significantly day-to-day. The activities they undertake can be affected by a number of factors, 
    including: whether a service is new or existing; what stage of the delivery lifecycle a team is in; and where in the 
@@ -84,3 +95,4 @@ One of the main responsibilities of a Service-led Service Designer is to develop
 Within DWP, these types of Service Designers will typically work within multi-disciplinary teams across Digital, 
 whilst also collaborating with colleagues across Service Transformation.</p>
 
+{% endblock %}
