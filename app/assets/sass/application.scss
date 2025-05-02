@@ -21,13 +21,14 @@ $nav-background-color: 	#634169;
   background-color: $nav-background-color;
   padding: govuk-spacing(2) 0;
   margin-bottom: govuk-spacing(8);
-  border-bottom: 0;
+
 }
 
 .dwp-service-nav__list {
   list-style: none;
   margin: 0;
   padding: 0px;
+
 }
 
 .dwp-service-nav__item {
@@ -641,7 +642,7 @@ color:#634169
   font-size: 1.25rem;
   font-weight: 700;
   padding: 15px 20px;
-  background-color: #f3f2f1;
+  background-color: #b28db8;
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
