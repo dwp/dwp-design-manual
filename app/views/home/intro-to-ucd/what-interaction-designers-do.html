@@ -1,11 +1,26 @@
+{% extends "intro-layout-big-bar.html.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
 
-<h2 class="govuk-heading-m">
+
+{% block page_title %}
+  Interaction Design in DWP - DWP Digital User Centred Design Manual
+{% endblock %}
+
+
+{% block content %}
+<a href="javascript:void(0)" onclick="history.back()" class="govuk-back-link">Back</a>
+<h2 class="govuk-heading-l">
     What interaction designers do
   </h2>
   <p class="govuk-body">
-    Interaction designers design the best way to let users interact with services and systems. In terms of both overall flow and at the level of individual design elements.
+    Interaction designers design the best way to let users interact with services and systems. In terms of both overall flow and 
+     at the level of individual design elements.</p>
+     <p class ="govuk-body">
+    Interaction Designers work to understand user journeys and use prototypes to deliver services, products and tools which fulfil user needs.
+     They work alongside Content and Service Designers, User Researchers, Front-end Developers and Software Engineers to deliver services designed for the people 
+     who use them. 
   </p>
-  <h2 class="govuk-heading-m">
+  <h2 class="govuk-heading-s">
     The problem we're here to solve
   </h2>
   <p class="govuk-body">
@@ -21,7 +36,7 @@ This has a negative impact on people’s wellbeing and society as a whole. And i
 <li>DWP’s staff to provide effective support to people who need it</li>
 </ul>
 </p>
-  <h2 class="govuk-heading-m">
+  <h2 class="govuk-heading-s">
     What we do
   </h2>
   <p class="govuk-body">
@@ -33,13 +48,15 @@ This has a negative impact on people’s wellbeing and society as a whole. And i
 
 
 
-    <h2 class="govuk-heading-m">
+    <h2 class="govuk-heading-s">
       Why we do it
     </h2>
     <p class="govuk-body">
-      We support some of the most vulnerable people in society.</p>
+      We support some of the most vulnerable people in society.</p>Designing services that are focussed on meeting user needs save the department time and money by mitigating risk, reducing rework and delivering quality services for users.
 
 <p class="govuk-body">We design services and systems to be as accessible as possible to everyone.</p>
 
 <p class="govuk-body">We have a related aim of promoting digital use of government services to save time and money for users and for us.</p>
 
+
+{% endblock %}
