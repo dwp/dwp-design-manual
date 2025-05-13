@@ -1,0 +1,117 @@
+{% extends "ur-layout-big-bar.html" %}
+{% from "side-navigation/macro.njk" import dwpSideNavigation %}
+
+
+{% block page_title %}
+  User Research in DWP - DWP Digital User Centred Design Manual
+{% endblock %}
+
+
+{% block content %}
+<main id="content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+<h1 class="govuk-heading-l">What is user research?</h1>
+
+<p class="govuk-body"> User research is more than just usability testing prototypes with users. User research helps us understand users and their needs, and ensure we are creating
+     services that meet those needs.</p>
+
+<p class="govuk-body">If we design and build services without understanding users and their needs, we will not know if the problems we are trying to solve are the right ones, 
+    if the service will actually enable users to do what they need to do, or meet the business need in solving those problems</p>
+
+      
+      
+      <h2 class="govuk-heading-l">What does a user researcher do?</h2>
+
+ <p class="govuk-body">A user researcher plans, designs and carries out research activities with users to get a deep understanding of 
+    the people using or delivering a service. </p>
+
+<p class="govuk-body">This research should inform policy and 
+    proposition as well as service, content and interaction design.</p>
+
+    <p class="govuk-body">Some of the different research methods used in government include:
+        <ul class="govuk-list--bullet">
+            <li><a href="https://www.gov.uk/service-manual/user-research/contextual-research-and-observation">contextual research and observation</a> </li>
+            <li><a href="https://www.gov.uk/service-manual/user-research/research-small-group-workshops">researching in small workshops</a></li>
+            <li><a href="https://www.gov.uk/service-manual/user-research/using-in-depth-interviews">in-depth interviews</a></li>
+            <li><a href="https://www.gov.uk/service-manual/user-research/using-moderated-usability-testing">moderated usability testing</a></li>
+            <li><a href="https://www.gov.uk/service-manual/user-research/doing-pop-up-research">pop up research</a></li>
+            <li><a href="https://www.gov.uk/service-manual/user-research/creating-an-experience-map">experience mapping</a></li>
+            </ul>
+            </p>
+<h3 class="govuk-heading-l">When should we do user research?</h3>
+      <p class="govuk-body">User research is not a once and done activity. From the point of understanding there is a 
+    problem to solve, through to iterations of a live service, user research should continously inform the delivery of services</p>
+
+    <p class="govuk-body">Having user researchers involved from the beginning will help identify assumptions, constraints, user needs and the scope of the work that needs to be done.
+        </p>
+            <p class="govuk-body">You can read more about user research for government services in the <a href="https://www.gov.uk/service-manual/user-research">Gov.uk Service Manual</a>.</p>
+
+    </div>
+  </div>
+</main>
+
+
+<script>
+  window.addEventListener('load', function() {
+      const links = document.querySelectorAll('.dwp-side-navigation__link');
+      
+      // Function to initialize GOV.UK components
+      function initGovukComponents(element) {
+          if (window.GOVUKFrontend) {
+              // Initialize all GOV.UK components in the section
+              window.GOVUKFrontend.initAll({
+                  scope: element
+              });
+              
+              // Specifically initialize tabs
+              const tabs = element.querySelectorAll('[data-module="govuk-tabs"]');
+              tabs.forEach(tab => {
+                  new window.GOVUKFrontend.Tabs(tab).init();
+              });
+          }
+      }
+  
+      // Initialize components in the first visible section
+      const firstSection = document.querySelector('.content-section:not([hidden])');
+      if (firstSection) {
+          initGovukComponents(firstSection);
+      }
+      
+      links.forEach(link => {
+          link.addEventListener('click', function(e) {
+              e.preventDefault();
+              
+              // Get the section ID from data attribute
+              const sectionId = this.getAttribute('data-section');
+              
+              // Hide all sections
+              document.querySelectorAll('.content-section').forEach(section => {
+                  section.hidden = true;
+              });
+              
+              // Show the target section
+              const targetSection = document.getElementById(sectionId);
+              if (targetSection) {
+                  targetSection.hidden = false;
+                  // Initialize components in the newly shown section
+                  initGovukComponents(targetSection);
+              }
+              
+              // Update active state
+              links.forEach(l => l.classList.remove('dwp-side-navigation__link--active'));
+              this.classList.add('dwp-side-navigation__link--active');
+          });
+      });
+      
+      // Set first link as active by default
+      const firstLink = document.querySelector('.dwp-side-navigation__link');
+      if (firstLink) {
+          firstLink.classList.add('dwp-side-navigation__link--active');
+      }
+  });
+  </script>
+  
+{% endblock %}
