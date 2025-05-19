@@ -1,5 +1,5 @@
 {#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
-{%- set assetPath = '/govuk/assets' -%}
+{%- set assetPath = '/plugin-assets/govuk-frontend/dist/govuk/assets' -%}
 
 {% extends "govuk/template.njk" %}
 
@@ -36,7 +36,6 @@
   <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css" />
   
   {# For guidance, see: https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images #}
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 {% endblock %}
 
 {% block pageTitle %}
@@ -68,7 +67,7 @@
 
 {% block bodyEnd %}
   {# Move JavaScript to end of body and ensure correct order #}
-  <script src="/govuk/all.js"></script>
+  <script src="/public/javascripts/application.js"></script>
   <script>
     window.addEventListener('load', function() {
       if (window.GOVUKFrontend) {
@@ -76,7 +75,5 @@
       }
     });
   </script>
-  <script src="/public/javascripts/application.js"></script>
-  <script src="/public/javascripts/auto-store-data.js"></script>
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
