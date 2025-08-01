@@ -12,10 +12,72 @@
 
     <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-one-quarter">
+      <button class="dwp-side-navigation__button" data-module="dwp-side-navigation"
+  data-target="dwp-side-navigation-panel"
+  data-label-hide="Hide navigation"
+  data-label-show="Show navigation"
+  aria-expanded="false">
+  <span class="dwp-side-navigation__section-toggle-focus">
+    <span class="dwp-side-navigation__chevron dwp-side-navigation__chevron--down"></span>
+    <span class="dwp-side-navigation__section-toggle-text">Show navigation</span>
+  </span>
+</button>
+<nav data-module="dwp-side-navigation-panel" class="dwp-side-navigation dwp-side-navigation--mobile" aria-label="Side" role="navigation">
+  <ul class="dwp-side-navigation__list">
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-1" href="#users" class="dwp-side-navigation__link">
+      1. Users
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-2" href="#channels" class="dwp-side-navigation__link" >
+      2. Channels
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-3" href="#context" class="dwp-side-navigation__link">
+      3. Context
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-4" href="#consistency" class="dwp-side-navigation__link">
+      4. Consistency
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-5" href="#error" class="dwp-side-navigation__link">
+      5. Error
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-6" href="#collaboration" class="dwp-side-navigation__link">
+      6. Collaboration
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-6" href="#scaling" class="dwp-side-navigation__link">
+      7. Scaling
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-6" href="#secure" class="dwp-side-navigation__link">
+      8. Secure
+      </a>
+    </li>
+    <li class="dwp-side-navigation__item">
+      <a id="s-item-6" href="#data" class="dwp-side-navigation__link">
+      9. Data
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+      <div class="govuk-grid-column-three-quarters">
         <h1 class="govuk-heading-xl">Internal system design principles</h1>
 
-        <h2 class="govuk-heading-l">
+        <h2 id="users" class="govuk-heading-l">
           1. Users
         </h2>
         <p class="govuk-body">
@@ -32,7 +94,7 @@
             <strong>Do less, unless it requires the public to do more. </strong>       </p>
 
 
-        <h2 class="govuk-heading-l">
+        <h2 id="channels" class="govuk-heading-l">
         2. Channels
         </h2>
         <p class="govuk-body">
@@ -46,7 +108,8 @@
         <p class="govuk-body">
 
         In a universal use case, we must <strong> balance doing many tasks well instead of perfecting one. </strong>       </p>
-        <h2 class="govuk-heading-l">
+
+        <h2 id="context" class="govuk-heading-l">
           3. Context
         </h2>
         <p class="govuk-body">
@@ -63,7 +126,8 @@
             We must design internal systems alongside agent training and instructions. It's important to incorporate this in usability testing wherever possible.
             Test and learns can also help us learn how the system works with real data. They do this in a controlled, observed environment
             and allow us to <a href="https://www.gov.uk/service-manual/agile-delivery/core-principles-agile#fail-fast-learn-quickly" class="govuk-link">fail fast and learn quickly</a>.        </p>
-        <h2 class="govuk-heading-l">
+
+        <h2 id="consistency" class="govuk-heading-l">
         4. Consistency
         </h2>
         <p class="govuk-body">
@@ -78,8 +142,9 @@
              <p class="govuk-body">
             It is okay to deviate from the style guide and design system if insights inform the decision. Always document why you have done so. The approach
             must be consistent across the entire system.        </p>
-        <h2 class="govuk-heading-l">
-          5. Error
+
+        <h2 id="error" class="govuk-heading-l">
+        5. Error
         </h2>
         <p class="govuk-body">
             We design systems to reduce and prevent errors. Yet we cannot eliminate them completely. Humans make mistakes. When they happen,  <strong>we must make
@@ -94,7 +159,8 @@
              <p class="govuk-body">
             When processes change significantly, we must include this in training and instructions. This will help build trust in the system and reduce
             any workarounds or duplication of effort.        </p>
-        <h2 class="govuk-heading-l">
+
+        <h2 id="collaboration" class="govuk-heading-l">
          6. Collaboration
         </h2>
         <p class="govuk-body">
@@ -108,7 +174,7 @@
                 <p class="govuk-body">
             Remember that agents are unlikely to be the sole operational user group. Think about how to work with colleagues in key roles. These include
             implementation, change management, training, and quality assurance.        </p>
-        <h2 class="govuk-heading-l">
+        <h2 id="scaling" class="govuk-heading-l">
             7. Scaling        <h2>
         <p class="govuk-body">
         When designing a system,  <strong>consider how it will scale over time </strong>to provide all the functionality required to meet users’ needs. </p>
@@ -122,7 +188,7 @@
         We often need to make tactical decisions before we can implement strategic solutions. We must ensure we do not make it harder to shift to
          more strategic solutions when scaling.
                 </p>
-        <h2 class="govuk-heading-l">
+        <h2 id="secure" class="govuk-heading-l">
         8. Secure
         </h2>
         <p class="govuk-body">
@@ -131,7 +197,7 @@
         <p class="govuk-body">
          <strong>Consider the environments of both the agent and the person using the service</strong>. For example, an agent may need the member of the public to provide sensitive information while
         using a phone in a public place. </p>
-        <h2 class="govuk-heading-l">
+        <h2 id="data" class="govuk-heading-l">
        9. Data
         </h2>
         <p class="govuk-body">
