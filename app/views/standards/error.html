@@ -12,13 +12,9 @@
 
     <div class="govuk-grid-row">
 
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Internal system design principles</h1>
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">5. Error</h1>
 
-
-        <h2 class="govuk-heading-l">
-          5. Error
-        </h2>
         <p class="govuk-body">
             We design systems to reduce and prevent errors. Yet we cannot eliminate them completely. Humans make mistakes. When they happen,  <strong>we must make
             it easy to identify and fix them.</strong>  </p>
@@ -32,14 +28,56 @@
              <p class="govuk-body">
             When processes change significantly, we must include this in training and instructions. This will help build trust in the system and reduce
             any workarounds or duplication of effort.        </p>
-
-
-      
-
-
+      </div>
       </div>
 
-    </div>
+      <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-quarter">
+            <button class="dwp-side-navigation__button" data-module="dwp-side-navigation"
+        data-target="dwp-side-navigation-panel"
+        data-label-hide="Hide navigation"
+        data-label-show="Show navigation"
+        aria-expanded="false">
+        <span class="dwp-side-navigation__section-toggle-focus">
+          <span class="dwp-side-navigation__chevron dwp-side-navigation__chevron--down"></span>
+          <span class="dwp-side-navigation__section-toggle-text">Show navigation</span>
+        </span>
+      </button>
+      <nav data-module="dwp-side-navigation-panel" class="dwp-side-navigation dwp-side-navigation--mobile" aria-label="Side" role="navigation">
+        <ul class="dwp-side-navigation__list">
+          <li class="dwp-side-navigation__item">
+            <a id="s-item-1" href="#prevention" class="dwp-side-navigation__link">
+          Prevention is better than cure
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="s-item-2" href="#channels" class="dwp-side-navigation__link" >
+            2. Channels
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="s-item-3" href="#context" class="dwp-side-navigation__link">
+            3. Context
+            </a>
+          </li>
+          <li class="dwp-side-navigation__item">
+            <a id="s-item-4" href="#consistency" class="dwp-side-navigation__link">
+            4. Consistency
+            </a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+
+  <div class="govuk-grid-column-one-half">
+    <h1 class="govuk-heading-l">Prevention is better than cure</h1>
+<p>As designers, we have a responsibility to reduce user error wherever possible.
+There are many things we can do to reduce error, these include:  </p>
+  </div>
+
+</div>
+
 
   </main>
 {% endblock %}
