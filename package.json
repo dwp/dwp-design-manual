@@ -15,5 +15,9 @@
     "govuk-prototype-kit": "13.16.2",
     "jquery": "3.7.1",
     "notifications-node-client": "8.2.1"
+  },
+  "overrides": {
+    "uuid": "11.1.1",
+    "immutable": "4.3.9"
   }
 }
